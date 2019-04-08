@@ -81,8 +81,20 @@
 ### Association
 - belongs_to :user
 - belongs_to :small_category
+- has_one  :value
 - has_many :comments
 - has_many :images
+
+## values table
+
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false , foreign_key: true|
+|price|integer|null: false|
+|profit|integer|null: false|
+
+### Association
+- belongs_to :item
 
 ## images table
 

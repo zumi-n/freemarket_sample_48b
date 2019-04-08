@@ -145,7 +145,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |medium_category_id|references|null: false , foreign_key: true|
-|Large_category|string|null: false|
+|large_category|string|null: false|
 
 ### Association
 - has_many :medium_categorys

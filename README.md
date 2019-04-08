@@ -126,15 +126,16 @@
 
 ### Association
 - belongs_to :small_category
+- has_many :small_categorys
 
 ## Large_categorys table
 
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false , foreign_key: true|
+|medium_category_id|references|null: false , foreign_key: true|
 |Large_category|string|null: false|
 
 ### Association
-- belongs_to :medium_category
+- has_many :medium_categorys
 
 

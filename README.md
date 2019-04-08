@@ -121,7 +121,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false , foreign_key: true|
+|small_category_id|references|null: false , foreign_key: true|
 |medium_category|string|null: false|
 
 ### Association

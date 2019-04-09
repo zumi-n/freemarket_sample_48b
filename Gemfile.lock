@@ -129,11 +129,8 @@ GEM
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
-<<<<<<< HEAD
-    kgio (2.11.2)
-=======
     jwt (2.1.0)
->>>>>>> master
+    kgio (2.11.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -249,13 +246,10 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-<<<<<<< HEAD
     sshkit (1.18.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-=======
     temple (0.8.1)
->>>>>>> master
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
@@ -266,14 +260,11 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
-<<<<<<< HEAD
     unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
-=======
     warden (1.2.8)
       rack (>= 2.0.6)
->>>>>>> master
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)

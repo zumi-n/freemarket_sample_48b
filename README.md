@@ -111,31 +111,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false , foreign_key: true|
-|small_category|string|null: false|
+|ancestry|string|null: false, index: true|
 
 ### Association
-- belongs_to :medium_categories
-- has_many :item
-
-## medium_categories table
-
-|Column|Type|Options|
-|------|----|-------|
-|small_category_id|references|null: false , foreign_key: true|
-|medium_category|string|null: false|
-
-### Association
-- belongs_to :large_category
-- has_many :small_categories
-
-## large_categories table
-
-|Column|Type|Options|
-|------|----|-------|
-|medium_category_id|references|null: false , foreign_key: true|
-|large_category|string|null: false|
-
-### Association
-- has_many :medium_categories
-
-
+- belongs_to :item
+- has_ancestry

@@ -52,10 +52,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false , foreign_key: true|
-|numbser|integer|null: false|
+|number|integer|null: false|
 |expiration_year|integer|null: false|
 |expiration_month|integer|null: false|
-|owner|string|null: false|
 |security_code|integer|null: false|
 
 ### Association
@@ -76,24 +75,14 @@
 |delivery_method|string|null: false|
 |delivery_area|string|null: false|
 |delivery_date|string|
-
-### Association
-- belongs_to :user
-- belongs_to :small_category
-- has_one  :value
-- has_many :comments
-- has_many :images
-
-## values table
-
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|null: false , foreign_key: true|
 |price|integer|null: false|
 |profit|integer|null: false|
 
 ### Association
-- belongs_to :item
+- belongs_to :user
+- belongs_to :small_category
+- has_many :comments
+- has_many :images
 
 ## images table
 
@@ -125,8 +114,8 @@
 |small_category|string|null: false|
 
 ### Association
-- belongs_to :item
-- has_many :medium_categories
+- belongs_to :medium_categories
+- has_many :item
 
 ## medium_categories table
 

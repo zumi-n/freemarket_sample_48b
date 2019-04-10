@@ -136,7 +136,7 @@
 |medium_category|string|null: false|
 
 ### Association
-- belongs_to :small_category
+- belongs_to :large_category
 - has_many :small_categories
 
 ## large_categories table

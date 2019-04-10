@@ -52,7 +52,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false , foreign_key: true|
-|number|integer|null: false|
+|token|integer|null: false|
 |expiration_year|integer|null: false|
 |expiration_month|integer|null: false|
 |security_code|integer|null: false|
@@ -65,24 +65,34 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false , foreign_key: true|
-|small_category_id|references|null: false , foreign_key: true|
 |name|string|index: true , null: false|
 |description|text||
 |brand|string|
 |size|string||
 |condition|string|null: false|
-|delivery_burden|string|null: false|
-|delivery_method|string|null: false|
-|delivery_area|string|null: false|
-|delivery_date|string|
 |price|integer|null: false|
 |profit|integer|null: false|
 
 ### Association
 - belongs_to :user
 - belongs_to :category
+- has_one :delivery
 - has_many :comments
 - has_many :images
+
+## deliveries table
+
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false , foreign_key: true|
+|burden|string|null: false|
+|method|string|null: false|
+|area|string|null: false|
+|date|string|
+
+
+### Association
+- belongs_to :item
 
 ## images table
 
@@ -100,7 +110,7 @@
 |------|----|-------|
 |user_id|references|null: false , foreign_key: true|
 |item_id|references|null: false , foreign_key: true|
-|comment|text||
+|comment|text|null: false|
 
 ### Association
 - belongs_to :user

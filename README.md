@@ -7,7 +7,6 @@
 |email|string|null: false , unique: true|
 |phone_number|string|null: false , unique: true|
 |password|string|null: false|
-|card|string||
 |evaluation|integer|
 
 ### Association
@@ -118,7 +117,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## small_categorys table
+## small_categories table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -127,9 +126,9 @@
 
 ### Association
 - belongs_to :item
-- has_many :medium_categorys
+- has_many :medium_categories
 
-## medium_categorys table
+## medium_categories table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -138,9 +137,9 @@
 
 ### Association
 - belongs_to :small_category
-- has_many :small_categorys
+- has_many :small_categories
 
-## Large_categorys table
+## large_categories table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -148,6 +147,6 @@
 |large_category|string|null: false|
 
 ### Association
-- has_many :medium_categorys
+- has_many :medium_categories
 
 

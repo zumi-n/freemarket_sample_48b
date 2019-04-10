@@ -80,7 +80,7 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :small_category
+- belongs_to :category
 - has_many :comments
 - has_many :images
 
@@ -106,7 +106,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## small_categories table
+## categories table
 
 |Column|Type|Options|
 |------|----|-------|

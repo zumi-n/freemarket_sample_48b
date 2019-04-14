@@ -26,9 +26,7 @@
   width: 700px;
   height: 200px;
   position: relative;
-    // a{
-    // text-decoration: none;
-    // }
+
     &__face{
     text-align: center;
     top: 50px;
@@ -65,36 +63,11 @@
       }
     }
 }
-        // .mypage-user-icon
-        //   = link_to '#', class: "" do
-        //     = image_tag 'mypage_background.jpg'
-        //   .mypage-user-icon__face
-        //     = link_to '#', class: "" do
-        //       = image_tag('member_photo_noimage_thumb.png', class: "face", width: "60", height: "60")
-        //       .mypage-user-icon__face__name
-        //         %h2 あざお
-        //       .mypage-user-icon__face__info
-        //         .mypage-user-icon__face__info--value
-        //           %p 評価
-        //           %span 0
-        //         .mypage-user-icon__face__info--items
-        //           %p 出品数
-        //           %span 0
-
-
-
-
-
-
-
-
-
-
 
 .face{
   border-radius: 50%;
 }
-/*タブ切り替え全体のスタイル*/
+
 .mypage-tabs {
   margin-top: 50px;
   background-color: white;
@@ -102,7 +75,6 @@
   margin: 0 auto;
 }
 
-/*タブのスタイル*/
 .tab-item {
   width: calc(100%/2);
   height: 74px;
@@ -126,16 +98,17 @@ input[name="tab-item"] {
   display: none;
 }
 
-/*タブ切り替えの中身のスタイル*/
 .tab-content#info-content{
   width: 100%;
   display: none;
   clear: both;
   overflow: hidden;
-  // display: flex;
   position: relative;
   padding: 16px;
   border-bottom: thin solid #EEEEEE;
+    .fas.fa-chevron-right{
+      color: black;
+    }
 }
   .description{
     width: 700px;
@@ -179,13 +152,11 @@ input[name="tab-item"] {
     }
 }
 
-/*選択されているタブのコンテンツのみを表示*/
 .mypage-tabs #info:checked ~ #info-content,
 .mypage-tabs #todo:checked ~ #todo-content,{
   display: block;
 }
 
-/*選択されているタブのスタイルを変える*/
 .mypage-tabs input[name="tab-item"]:checked + .tab-item {
   background-color: white;
   color: black;
@@ -194,7 +165,6 @@ input[name="tab-item"] {
 .description:hover {
   opacity: 0.50;
 }
-
 
 .tab-content__description__btn{
   display: inline-block;
@@ -237,7 +207,6 @@ input[name="tab-item"] {
 }
 
 
-/*タブ切り替え全体のスタイル*/
 .lower-mypage-tabs{
   margin-top: 50px;
   background-color: white;
@@ -245,7 +214,6 @@ input[name="tab-item"] {
   margin: 0 auto;
 }
 
-/*タブのスタイル*/
 .tab-items {
   width: calc(100%/2);
   height: 74px;
@@ -269,7 +237,6 @@ input[name="tab-items"] {
   display: none;
 }
 
-/*タブ切り替えの中身のスタイル*/
 .tab-content {
   display: none;
   padding: 16px 16px 0;
@@ -296,13 +263,11 @@ input[name="tab-items"] {
     }
 }
 
-/*選択されているタブのコンテンツのみを表示*/
 .lower-mypage-tabs #trading:checked ~ #trading-content,
 .lower-mypage-tabs #bought:checked ~ #bought-content,{
   display: block;
 }
 
-/*選択されているタブのスタイルを変える*/
 .lower-mypage-tabs input[name="tab-items"]:checked + .tab-items {
   background-color: white;
   color: black;

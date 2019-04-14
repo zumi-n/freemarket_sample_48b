@@ -3,10 +3,10 @@
     .header__box__top
       .header__box__top--logo
         = link_to root_path do
-          = image_tag "mercari_logo_color.svg", alt: 'mercari', width: '134', height: '36'
+          = image_tag "mercari_logo_color.svg", alt: 'mercari'
       .header__box__top--search-box
         = form_with url: '#' do |form|
-          = form.text_field :search, placeholder: "何かお探しですか？", width: '400', class: 'search-box'
+          = form.text_field :search, placeholder: "何かお探しですか？", class: 'search-box'
           = form.button type: 'submit', class: 'search-btn' do
             %i.fa.fa-search
     .header__box__navi

@@ -1,0 +1,30 @@
+.wrapper
+  =render "shared/header"
+
+  .owl-carousel
+    = image_tag 'carousel/banner-bokurano-heisei.jpg'
+  .main-box
+    %h2 出品中のアイテム
+
+    %section.main-box__items
+      %h3
+        =link_to "新着アイテム", "#"
+
+      .main-box__items__row
+        =render "shared/item"
+        =render "shared/item"
+        =render "shared/item"
+        =render "shared/item"
+
+      .main-box__items__row
+        =render "shared/item"
+        =render "shared/item"
+        =render "shared/item"
+        =render "shared/item"
+
+
+  =render "shared/sell-btn"
+
+  =render "shared/app-banner"
+
+  =render "shared/footer"

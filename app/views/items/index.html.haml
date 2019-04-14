@@ -1,0 +1,87 @@
+.wrapper
+  =render "shared/header"
+
+  .owl-carousel
+    = image_tag 'carousel/banner-bokurano-heisei.jpg'
+  .main-box
+    %h2 出品中のアイテム
+
+    %section.main-box__items
+      %h3
+        =link_to "新着アイテム", "#"
+
+      .main-box__items__row
+        .main-box__items__row--item-box
+          =link_to '#', class: "" do
+            = image_tag 'item_sample.jpg', width: "213", height: "213"
+            .main-box__items__row--item-box--body
+              %h4 ニコちゃんロングTシャツ 100
+              .main-box__items__row--item-box--body--price
+                %h5 ¥ 100
+                %h6 (税込)
+        .main-box__items__row--item-box
+          =link_to '#', class: "" do
+            = image_tag 'item_sample.jpg', width: "213", height: "213"
+            .main-box__items__row--item-box--body
+              %h4 ニコちゃんロングTシャツ 100
+              .main-box__items__row--item-box--body--price
+                %h5 ¥ 100
+                %h6 (税込)
+        .main-box__items__row--item-box
+          =link_to '#', class: "" do
+            = image_tag 'item_sample.jpg', width: "213", height: "213"
+            .main-box__items__row--item-box--body
+              %h4 ニコちゃんロングTシャツ 100
+              .main-box__items__row--item-box--body--price
+                %h5 ¥ 100
+                %h6 (税込)
+        .main-box__items__row--item-box
+          =link_to '#', class: "" do
+            = image_tag 'item_sample.jpg', width: "213", height: "213"
+            .main-box__items__row--item-box--body
+              %h4 ニコちゃんロングTシャツ
+              .main-box__items__row--item-box--body--price
+                %h5 ¥ 100
+                %h6 (税込)
+
+      .main-box__items__row
+        .main-box__items__row--item-box
+          =link_to '#', class: "" do
+            = image_tag 'item_sample.jpg', width: "213", height: "213"
+            .main-box__items__row--item-box--body
+              %h4 ニコちゃんロングTシャツ 100
+              .main-box__items__row--item-box--body--price
+                %h5 ¥ 100
+                %h6 (税込)
+        .main-box__items__row--item-box
+          =link_to '#', class: "" do
+            = image_tag 'item_sample.jpg', width: "213", height: "213"
+            .main-box__items__row--item-box--body
+              %h4 ニコちゃんロングTシャツ 100
+              .main-box__items__row--item-box--body--price
+                %h5 ¥ 100
+                %h6 (税込)
+        .main-box__items__row--item-box
+          =link_to '#', class: "" do
+            = image_tag 'item_sample.jpg', width: "213", height: "213"
+            .main-box__items__row--item-box--body
+              %h4 ニコちゃんロングTシャツ 100
+              .main-box__items__row--item-box--body--price
+                %h5 ¥ 100
+                %h6 (税込)
+        .main-box__items__row--item-box
+          =link_to '#', class: "" do
+            = image_tag 'item_sample.jpg', width: "213", height: "213"
+            .main-box__items__row--item-box--body
+              %h4 ニコちゃんロングTシャツ 100
+              .main-box__items__row--item-box--body--price
+                %h5 ¥ 987,654,321
+                %h6 (税込)
+
+  = link_to "#", class: "fixed-circle-btn"  do
+    %div 出品
+    %i.fa.fa-camera
+
+  =render "shared/app-banner"
+
+  =render "shared/footer"

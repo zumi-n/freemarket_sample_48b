@@ -1,0 +1,31 @@
+.header
+  .header__box
+    .header__box__top
+      .header__box__top--logo
+        = link_to root_path do
+          = image_tag "mercari_logo_color.svg", alt: 'mercari', width: '134', height: '36'
+      .header__box__top--search-box
+        = form_with url: '#' do |form|
+          = form.text_field :search, placeholder: "何かお探しですか？", width: '400', class: 'search-box'
+          = form.button type: 'submit', class: 'search-btn' do
+            %i.fa.fa-search
+    .header__box__navi
+      %navi.header__box__navi--product
+        %ul
+          %li
+            %i.fa.fa-list-ul
+            %span カテゴリーから探す
+          %li
+            %i.fa.fa-tag
+            %span ブランドから探す
+      .header__box__navi--user
+        %ul
+          %li
+            %i.far.fa-bell.fa-lg
+            %span お知らせ
+          %li
+            %i.fa.fa-check.fa-lg
+            %span やることリスト
+          %li
+            %i.fa.fa-circle.fa-lg
+            %span マイページ

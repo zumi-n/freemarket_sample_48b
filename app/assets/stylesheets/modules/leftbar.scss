@@ -1,19 +1,21 @@
 .leftbar{
   width: 280px;
+  height: 1252px;
+  float: left;
 }
 
 .mypage-nav{
   margin-right: 40px;
   &__list{
-  width: 280px;
-  background-color: white;
-  border-bottom: thin solid #EEEEEE;
-  display: inline-block;
-    li{
     width: 280px;
-    height:  48px;
+    background-color: white;
     border-bottom: thin solid #EEEEEE;
-    position: relative;
+    display: inline-block;
+    li{
+      width: 280px;
+      height:  48px;
+      border-bottom: thin solid #EEEEEE;
+      position: relative;
     }
   }
 }
@@ -37,12 +39,12 @@
   display: flex;
   justify-content: space-between;
   background-color: #EEEEEE;
-    p{
-      font-weight: bold;
-    }
-    .fas.fa-chevron-right{
-      color: black;
-    }
+  p{
+    font-weight: bold;
+  }
+  .fas.fa-chevron-right{
+    color: black;
+  }
 }
 
 .fas.fa-chevron-right{
@@ -51,19 +53,19 @@
 
 .mypage-nav__list--item:hover{
   background-color: #EEEEEE;
-    .fas.fa-chevron-right{
+  .fas.fa-chevron-right{
     transform: translate(5px, 0);
     color: black;
-    }
+  }
 }
 
 .mypage-nav__list--item__mypage:hover{
   background-color: #EEEEEE;
   transform: translate(0);
-    .fas.fa-chevron-right{
+  .fas.fa-chevron-right{
     transform: translate(5px, 0);
     color: black;
-    }
+  }
 }
 
 .merupay-nav-head,
@@ -72,18 +74,18 @@
   height: 16px;
   size: 16px;
   margin-top: 40px;
-    h3{
-      font-weight: bold;
-    }
+  h3{
+    font-weight: bold;
+  }
 }
 
 .mypage-nav-list{
   background-color: white;
-    li{
-    width: 280px;
-    height:  48px;
-    border-bottom: thin solid #EEEEEE;
-    position: relative;
-    }
+  li{
+  width: 280px;
+  height:  48px;
+  border-bottom: thin solid #EEEEEE;
+  position: relative;
+  }
 }
 

@@ -2,9 +2,10 @@
 
   = render 'shared/header'
 
-  = render 'shared/sell-btn'
-
   .container.clearfix
+
+    = render 'leftbar'
+
     .main
       .content
         .mypage-user-icon
@@ -122,4 +123,6 @@
               %li
                 %span 過去に取引した商品がありません
 
-    = render 'leftbar'
+  = render 'shared/sell-btn'
+  = render "shared/app-banner"
+  = render 'shared/footer'

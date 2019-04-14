@@ -1,7 +1,12 @@
 .container.clearfix{
   width: 1020px;
-  height: 250vh;
-  margin: 40px auto 0;
+  margin: 40px auto 20px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .main{
@@ -16,42 +21,41 @@
   width: 700px;
   height: 200px;
   position: relative;
-
-    &__face{
+  &__face{
     text-align: center;
     top: 50px;
     left: 295px;
     position: absolute;
-      &__name h2{
+    &__name h2{
       font-size: 14px;
       font-weight: bold;
       color: black;
-      }
-      &__info{
+    }
+    &__info{
       font-size: 12px;
       margin: 8px auto 0;
       display: flex;
-        &--value{
-          color: black;
-          display: flex;
-          text-decoration: none;
-          span{
+      &--value{
+        color: black;
+        display: flex;
+        text-decoration: none;
+        span{
           padding-left: 8px;
           font-weight: bold;
           }
-        }
-        &--items{
-          color: black;
-          display: flex;
-          margin-left: 16px;
-          text-decoration: none;
-          span{
+      }
+      &--items{
+        color: black;
+        display: flex;
+        margin-left: 16px;
+        text-decoration: none;
+        span{
           padding-left: 8px;
           font-weight: bold;
-          }
         }
       }
     }
+  }
 }
 
 .face{
@@ -66,7 +70,7 @@
 }
 
 .tab-item {
-  width: calc(100%/2);
+  width: (100%/2);
   height: 74px;
   border-top: 2px solid red;
   background-color: #EEEEEE;
@@ -80,6 +84,7 @@
   font-weight: bold;
   transition: all 0.2s ease;
 }
+
 .tab-item:hover {
   opacity: 0.50;
 }
@@ -96,50 +101,51 @@ input[name="tab-item"] {
   position: relative;
   padding: 16px;
   border-bottom: thin solid #EEEEEE;
-    .fas.fa-chevron-right{
-      color: black;
-    }
+  .fas.fa-chevron-right{
+    color: black;
+  }
 }
-  .description{
-    width: 700px;
+
+.description{
+  width: 700px;
+  display: flex;
+  .info-content{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
     display: flex;
-    .info-content{
-      text-decoration: none;
-      font-size: 14px;
-      color: black;
-      display: flex;
-      .message{
-        padding-left: 10px;
-        padding-top: 5px;
-      }
-      .time li{
+    .message{
+      padding-left: 10px;
+      padding-top: 5px;
+    }
+    .time li{
       display: inline;
       color: gray;
-      }
-      .fa-chevron-right{
-        right: 20px;
-        top: 40px;
-        position: absolute;
-      }
+    }
+    .fa-chevron-right{
+      right: 20px;
+      top: 40px;
+      position: absolute;
     }
   }
+}
 
 .tab-content#todo-content{
   display: none;
   width: 100%;
   height: 236px;
   position: relative;
-    .info-image{
-      position: absolute;
-      top: 15px;
-      left: 280px;
-    }
-    span{
-      position: absolute;
-      color: gray;
-      top: 150px;
-      left: 220px;
-    }
+  .info-image{
+    position: absolute;
+    top: 15px;
+    left: 280px;
+  }
+  span{
+    position: absolute;
+    color: gray;
+    top: 150px;
+    left: 220px;
+  }
 }
 
 .mypage-tabs #info:checked ~ #info-content,
@@ -164,23 +170,22 @@ input[name="tab-item"] {
   height: 60px;
   border-radius: 3px;
   text-align: center;
-    .btn{
+  .btn{
     color: black;
     text-decoration: none;
-    }
-    p{
+  }
+  p{
     color: black;
     text-decoration: none;
     line-height: 60px;
     size: 12px;
-    }
+  }
 }
 
 .tab-content__description__btn:hover {
   opacity: 0.50;
   background-color: white;
 }
-
 
 .lower-content{
   width: 700px;
@@ -196,7 +201,6 @@ input[name="tab-item"] {
   padding-left: 10px;
 }
 
-
 .lower-mypage-tabs{
   margin-top: 50px;
   background-color: white;
@@ -205,7 +209,7 @@ input[name="tab-item"] {
 }
 
 .tab-items {
-  width: calc(100%/2);
+  width: (100%/2);
   height: 74px;
   border-top: 2px solid red;
   background-color: #EEEEEE;
@@ -219,6 +223,7 @@ input[name="tab-item"] {
   font-weight: bold;
   transition: all 0.2s ease;
 }
+
 .tab-items:hover {
   opacity: 0.50;
 }
@@ -240,17 +245,17 @@ input[name="tab-items"] {
   width: 100%;
   height: 236px;
   position: relative;
-    .info-image{
-      position: absolute;
-      top: 15px;
-      left: 280px;
-    }
-    span{
-      position: absolute;
-      color: gray;
-      top: 150px;
-      left: 240px;
-    }
+  .info-image{
+    position: absolute;
+    top: 15px;
+    left: 280px;
+  }
+  span{
+    position: absolute;
+    color: gray;
+    top: 150px;
+    left: 240px;
+  }
 }
 
 .lower-mypage-tabs #trading:checked ~ #trading-content,

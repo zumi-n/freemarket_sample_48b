@@ -1,3 +1,313 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  box-sizing: border-box;
+}
+
+.header{
+  width: 1402px;
+  height: 149px;
+  background-color: white;
+}
+
+.container.clearfix{
+  width: 1020px;
+  height: 250vh;
+  margin: 40px auto 0;
+}
+
+.main{
+  float: right;
+}
+
+.content{
+  width: 700px;
+}
+
+.mypage-user-icon{
+  width: 700px;
+  height: 200px;
+  position: relative;
+    // a{
+    // text-decoration: none;
+    // }
+    &__face{
+    text-align: center;
+    top: 50px;
+    left: 295px;
+    position: absolute;
+      &__name h2{
+      font-size: 14px;
+      font-weight: bold;
+      color: black;
+      }
+      &__info{
+      font-size: 12px;
+      margin: 8px auto 0;
+      display: flex;
+        &--value{
+          color: black;
+          display: flex;
+          text-decoration: none;
+          span{
+          padding-left: 8px;
+          font-weight: bold;
+          }
+        }
+        &--items{
+          color: black;
+          display: flex;
+          margin-left: 16px;
+          text-decoration: none;
+          span{
+          padding-left: 8px;
+          font-weight: bold;
+          }
+        }
+      }
+    }
+}
+        // .mypage-user-icon
+        //   = link_to '#', class: "" do
+        //     = image_tag 'mypage_background.jpg'
+        //   .mypage-user-icon__face
+        //     = link_to '#', class: "" do
+        //       = image_tag('member_photo_noimage_thumb.png', class: "face", width: "60", height: "60")
+        //       .mypage-user-icon__face__name
+        //         %h2 あざお
+        //       .mypage-user-icon__face__info
+        //         .mypage-user-icon__face__info--value
+        //           %p 評価
+        //           %span 0
+        //         .mypage-user-icon__face__info--items
+        //           %p 出品数
+        //           %span 0
+
+
+
+
+
+
+
+
+
+
+
+.face{
+  border-radius: 50%;
+}
+/*タブ切り替え全体のスタイル*/
+.mypage-tabs {
+  margin-top: 50px;
+  background-color: white;
+  width: 700px;
+  margin: 0 auto;
+}
+
+/*タブのスタイル*/
+.tab-item {
+  width: calc(100%/2);
+  height: 74px;
+  border-top: 2px solid red;
+  background-color: #EEEEEE;
+  line-height: 74px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab-item:hover {
+  opacity: 0.50;
+}
+
+input[name="tab-item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab-content#info-content{
+  width: 100%;
+  display: none;
+  clear: both;
+  overflow: hidden;
+  // display: flex;
+  position: relative;
+  padding: 16px;
+  border-bottom: thin solid #EEEEEE;
+}
+  .description{
+    width: 700px;
+    display: flex;
+    .info-content{
+      text-decoration: none;
+      font-size: 14px;
+      color: black;
+      display: flex;
+      .message{
+        padding-left: 10px;
+        padding-top: 5px;
+      }
+      .time li{
+      display: inline;
+      color: gray;
+      }
+      .fa-chevron-right{
+        right: 20px;
+        top: 40px;
+        position: absolute;
+      }
+    }
+  }
+
+.tab-content#todo-content{
+  display: none;
+  width: 100%;
+  height: 236px;
+  position: relative;
+    .info-image{
+      position: absolute;
+      top: 15px;
+      left: 280px;
+    }
+    span{
+      position: absolute;
+      color: gray;
+      top: 150px;
+      left: 220px;
+    }
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+.mypage-tabs #info:checked ~ #info-content,
+.mypage-tabs #todo:checked ~ #todo-content,{
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.mypage-tabs input[name="tab-item"]:checked + .tab-item {
+  background-color: white;
+  color: black;
+}
+
+.description:hover {
+  opacity: 0.50;
+}
+
+
+.tab-content__description__btn{
+  display: inline-block;
+  padding: 16px auto 16px;
+  background: #EEEEEE;
+  width: 668px;
+  height: 60px;
+  border-radius: 3px;
+  text-align: center;
+    .btn{
+    color: black;
+    text-decoration: none;
+    }
+    p{
+    color: black;
+    text-decoration: none;
+    line-height: 60px;
+    size: 12px;
+    }
+}
+
+.tab-content__description__btn:hover {
+  opacity: 0.50;
+  background-color: white;
+}
+
+
+.lower-content{
+  width: 700px;
+  margin-top: 40px;
+}
+
+.lower-mypage{
+  height: 70px;
+}
+
+.lower-mypage p{
+  line-height: 70px;
+  padding-left: 10px;
+}
+
+
+/*タブ切り替え全体のスタイル*/
+.lower-mypage-tabs{
+  margin-top: 50px;
+  background-color: white;
+  width: 700px;
+  margin: 0 auto;
+}
+
+/*タブのスタイル*/
+.tab-items {
+  width: calc(100%/2);
+  height: 74px;
+  border-top: 2px solid red;
+  background-color: #EEEEEE;
+  line-height: 74px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab-items:hover {
+  opacity: 0.50;
+}
+
+input[name="tab-items"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab-content {
+  display: none;
+  padding: 16px 16px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+.tab-content#trading-content,
+.tab-content#bought-content,{
+  display: none;
+  width: 100%;
+  height: 236px;
+  position: relative;
+    .info-image{
+      position: absolute;
+      top: 15px;
+      left: 280px;
+    }
+    span{
+      position: absolute;
+      color: gray;
+      top: 150px;
+      left: 240px;
+    }
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+.lower-mypage-tabs #trading:checked ~ #trading-content,
+.lower-mypage-tabs #bought:checked ~ #bought-content,{
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.lower-mypage-tabs input[name="tab-items"]:checked + .tab-items {
+  background-color: white;
+  color: black;
+}
+
+
+
+

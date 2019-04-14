@@ -1,2 +1,121 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+.wrapper
+  .header
+  .container.clearfix
+    .main
+      .content
+        .mypage-user-icon
+          = link_to '#', class: "" do
+            = image_tag 'mypage_background.jpg'
+          .mypage-user-icon__face
+            = link_to '#', class: "" do
+              = image_tag('member_photo_noimage_thumb.png', class: "face", width: "60", height: "60")
+              .mypage-user-icon__face__name
+                %h2 あざお
+              .mypage-user-icon__face__info
+                .mypage-user-icon__face__info--value
+                  %p 評価
+                  %span 0
+                .mypage-user-icon__face__info--items
+                  %p 出品数
+                  %span 0
+        .mypage-tabs
+          %input#info{checked: "checked", name: "tab-item", type: "radio"}/
+          %label.tab-item{for: "info"} お知らせ
+          %input#todo{name: "tab-item", type: "radio"}/
+          %label.tab-item{for: "todo"} やることリスト
+          .tab-content#info-content
+            %ul.description
+              = link_to '#', class: 'info-content' do
+                %li
+                  = image_tag('mercari_icon.png', size: '55x55')
+                %li.message
+                  事務局からの個別メッセージ「ログイン通知」
+                  %ul.time
+                    %li
+                      %i.far.fa-clock
+                    %li
+                      1時間前
+                %li
+                  %i.fas.fa-chevron-right
+
+          .tab-content#info-content
+            %ul.description
+              = link_to '#', class: 'info-content' do
+                %li
+                  = image_tag('mercari_icon.png', size: '55x55')
+                %li.message
+                  事務局からの個別メッセージ「ログイン通知」
+                  %ul.time
+                    %li
+                      %i.far.fa-clock
+                    %li
+                      1時間前
+                %li
+                  %i.fas.fa-chevron-right
+
+          .tab-content#info-content
+            %ul.description
+              = link_to '#', class: 'info-content' do
+                %li
+                  = image_tag('mercari_icon.png', size: '55x55')
+                %li.message
+                  事務局からの個別メッセージ「ログイン通知」
+                  %ul.time
+                    %li
+                      %i.far.fa-clock
+                    %li
+                      1時間前
+                %li
+                  %i.fas.fa-chevron-right
+
+          .tab-content#info-content
+            %ul.description
+              = link_to '#', class: 'info-content' do
+                %li
+                  = image_tag('mercari_icon.png', size: '55x55')
+                %li.message
+                  事務局からの個別メッセージ「ログイン通知」
+                  %ul.time
+                    %li
+                      %i.far.fa-clock
+                    %li
+                      1時間前
+                %li
+                  %i.fas.fa-chevron-right
+
+
+          .tab-content#info-content
+            .tab-content__description__btn
+              = link_to '#', class: 'btn' do
+                %p 一覧を見る
+
+          .tab-content#todo-content
+            %ul.tab-content__description
+              %li
+                = image_tag('logo-gray-icon.svg', class: 'info-image', size: '110x110')
+              %li
+                %span 現在、やることリストはありません
+
+      .lower-content
+        .lower-mypage-tabs
+          .lower-mypage
+            %p 購入した商品
+          %input#trading{checked: "checked", name: "tab-items", type: "radio"}/
+          %label.tab-items{for: "trading"} 取引中
+          %input#bought{name: "tab-items", type: "radio"}/
+          %label.tab-items{for: "bought"} 過去の取引
+
+          .tab-content#trading-content
+            %ul.tab-content__description
+              %li
+                = image_tag('logo-gray-icon.svg', class: 'info-image', size: '110x110')
+              %li
+                %span 取引中の商品がありません
+          .tab-content#bought-content
+            %ul.tab-content__description
+              %li
+                = image_tag('logo-gray-icon.svg', class: 'info-image', size: '110x110')
+              %li
+                %span 過去に取引した商品がありません
+
+    = render 'leftbar'

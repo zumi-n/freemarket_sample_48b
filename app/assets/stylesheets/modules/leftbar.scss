@@ -1,0 +1,94 @@
+*{
+  box-sizing: border-box;
+}
+
+.leftbar{
+  width: 280px;
+}
+
+.mypage-nav{
+  margin-right: 40px;
+  &__list{
+  width: 280px;
+  background-color: white;
+  border-bottom: thin solid #EEEEEE;
+  display: inline-block;
+    li{
+    width: 280px;
+    height:  48px;
+    border-bottom: thin solid #EEEEEE;
+    position: relative;
+    }
+  }
+}
+
+.mypage-nav__list--item,{
+  line-height: 16px;
+  width: 280px;
+  padding: 16px;
+  color: black;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mypage-nav__list--item__mypage{
+  line-height: 16px;
+  width: 280px;
+  padding: 16px;
+  color: black;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #EEEEEE;
+    p{
+      font-weight: bold;
+    }
+    .fas.fa-chevron-right{
+      color: black;
+    }
+}
+
+.fas.fa-chevron-right{
+  color: #DDDDDD;
+}
+
+.mypage-nav__list--item:hover{
+  background-color: #EEEEEE;
+  transform: translate(0);
+    .fas.fa-chevron-right{
+    transform: translate(5px, 0);
+    color: black;
+    }
+}
+
+.mypage-nav__list--item__mypage:hover{
+  background-color: #EEEEEE;
+  transform: translate(0);
+    .fas.fa-chevron-right{
+    transform: translate(5px, 0);
+    color: black;
+    }
+}
+
+.merupay-nav-head,
+.setting-nav-head,{
+  width: 280px;
+  height: 16px;
+  size: 16px;
+  margin-top: 40px;
+    h3{
+      font-weight: bold;
+    }
+}
+
+.mypage-nav-list{
+  background-color: white;
+    li{
+    width: 280px;
+    height:  48px;
+    border-bottom: thin solid #EEEEEE;
+    position: relative;
+    }
+}
+

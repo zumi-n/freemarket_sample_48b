@@ -12,6 +12,9 @@ class UsersController < ApplicationController
     redirect_to edit_user_path, flash.now[:notice] = "変更しました。"
   end
 
+  def logout
+  end
+
     private
 
   def user_params

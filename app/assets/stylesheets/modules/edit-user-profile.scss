@@ -67,3 +67,20 @@
     border: 1px solid #CCCCCC;
   }
 }
+
+.mypage-nav__list--item__profile{
+  line-height: 16px;
+  width: 280px;
+  padding: 16px;
+  color: black;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #EEEEEE;
+  p{
+    font-weight: bold;
+  }
+  .fas.fa-chevron-right{
+    color: black;
+  }
+}

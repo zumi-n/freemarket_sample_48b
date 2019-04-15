@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :users, only: [:show]
   devise_for :users
   root 'items#index'
-  resources :items, only: [:index]
+  resources :users, only: [:show, :edit] do
+    get :logout, on: :member
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,86 @@
+.head-profile{
+  width: 700px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  span{
+    font-weight: bold;
+    font-size: 24px;
+    padding: 8px 24px;
+  }
+}
+
+.mypage-profile{
+  width: 700px;
+  height: 156px;
+  position: relative;
+  &__face{
+    position: absolute;
+    bottom: 25px;
+    left: 210px;
+  }
+  &__name{
+    position: absolute;
+    bottom: 35px;
+    left: 270px;
+    margin-left: 8px;
+    .profile-nickname{
+      width: 220px;
+      height: 48px;
+      padding: 10px 16px 8px;
+      border: 1px solid #CCCCCC;
+      border-radius: 4px;
+    }
+  }
+}
+
+.introduction{
+  width: 700px;
+  height: 362px;
+  background-color: white;
+  position: relative;
+  &__text{
+    padding: 20px 16px;
+  }
+  &__btn{
+    background-color: #ea352d;
+    position: absolute;
+    left: 15px;
+    bottom: 40px;
+    width: 668px;
+    height: 50px;
+    border: none;
+    text-decoration: none;
+    a{
+      color: white;
+      text-align: center;
+      line-height: 50px;
+    }
+  }
+  .intro-text{
+    position: absolute;
+    left: 15px;
+    width: 668px;
+    height: 216px;
+    padding: 10px 16px 8px;
+    border: 1px solid #CCCCCC;
+  }
+}
+
+.mypage-nav__list--item__profile{
+  line-height: 16px;
+  width: 280px;
+  padding: 16px;
+  color: black;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #EEEEEE;
+  p{
+    font-weight: bold;
+  }
+  .fas.fa-chevron-right{
+    color: black;
+  }
+}

@@ -1,3 +1,273 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container.clearfix{
+  width: 1020px;
+  margin: 40px auto 20px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.main{
+  float: right;
+}
+
+.content{
+  width: 700px;
+}
+
+.mypage-user-icon{
+  width: 700px;
+  height: 200px;
+  position: relative;
+  &__face{
+    text-align: center;
+    top: 50px;
+    left: 295px;
+    position: absolute;
+    &__name h2{
+      font-size: 14px;
+      font-weight: bold;
+      color: black;
+    }
+    &__info{
+      font-size: 12px;
+      margin: 8px auto 0;
+      display: flex;
+      &--value{
+        color: black;
+        display: flex;
+        text-decoration: none;
+        span{
+          padding-left: 8px;
+          font-weight: bold;
+          }
+      }
+      &--items{
+        color: black;
+        display: flex;
+        margin-left: 16px;
+        text-decoration: none;
+        span{
+          padding-left: 8px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.face{
+  border-radius: 50%;
+}
+
+.mypage-tabs {
+  margin-top: 50px;
+  background-color: white;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.tab-item {
+  width: (100%/2);
+  height: 74px;
+  border-top: 2px solid red;
+  background-color: #EEEEEE;
+  line-height: 74px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.tab-item:hover {
+  opacity: 0.50;
+}
+
+input[name="tab-item"] {
+  display: none;
+}
+
+.tab-content#info-content{
+  width: 100%;
+  display: none;
+  clear: both;
+  overflow: hidden;
+  position: relative;
+  padding: 16px;
+  border-bottom: thin solid #EEEEEE;
+  .fas.fa-chevron-right{
+    color: black;
+  }
+}
+
+.description{
+  width: 700px;
+  display: flex;
+  .info-content{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    display: flex;
+    .message{
+      padding-left: 10px;
+      padding-top: 5px;
+    }
+    .time li{
+      display: inline;
+      color: gray;
+    }
+    .fa-chevron-right{
+      right: 20px;
+      top: 40px;
+      position: absolute;
+    }
+  }
+}
+
+.tab-content#todo-content{
+  display: none;
+  width: 100%;
+  height: 236px;
+  position: relative;
+  .info-image{
+    position: absolute;
+    top: 15px;
+    left: 280px;
+  }
+  span{
+    position: absolute;
+    color: gray;
+    top: 150px;
+    left: 220px;
+  }
+}
+
+.mypage-tabs #info:checked ~ #info-content,
+.mypage-tabs #todo:checked ~ #todo-content,{
+  display: block;
+}
+
+.mypage-tabs input[name="tab-item"]:checked + .tab-item {
+  background-color: white;
+  color: black;
+}
+
+.description:hover {
+  opacity: 0.50;
+}
+
+.tab-content__description__btn{
+  display: inline-block;
+  padding: 16px auto 16px;
+  background: #EEEEEE;
+  width: 668px;
+  height: 60px;
+  border-radius: 3px;
+  text-align: center;
+  .btn{
+    color: black;
+    text-decoration: none;
+  }
+  p{
+    color: black;
+    text-decoration: none;
+    line-height: 60px;
+    size: 12px;
+  }
+}
+
+.tab-content__description__btn:hover {
+  opacity: 0.50;
+  background-color: white;
+}
+
+.lower-content{
+  width: 700px;
+  margin-top: 40px;
+}
+
+.lower-mypage{
+  height: 70px;
+}
+
+.lower-mypage p{
+  line-height: 70px;
+  padding-left: 10px;
+}
+
+.lower-mypage-tabs{
+  margin-top: 50px;
+  background-color: white;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.tab-items {
+  width: (100%/2);
+  height: 74px;
+  border-top: 2px solid red;
+  background-color: #EEEEEE;
+  line-height: 74px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.tab-items:hover {
+  opacity: 0.50;
+}
+
+input[name="tab-items"] {
+  display: none;
+}
+
+.tab-content {
+  display: none;
+  padding: 16px 16px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+.tab-content#trading-content,
+.tab-content#bought-content,{
+  display: none;
+  width: 100%;
+  height: 236px;
+  position: relative;
+  .info-image{
+    position: absolute;
+    top: 15px;
+    left: 280px;
+  }
+  span{
+    position: absolute;
+    color: gray;
+    top: 150px;
+    left: 240px;
+  }
+}
+
+.lower-mypage-tabs #trading:checked ~ #trading-content,
+.lower-mypage-tabs #bought:checked ~ #bought-content,{
+  display: block;
+}
+
+.lower-mypage-tabs input[name="tab-items"]:checked + .tab-items {
+  background-color: white;
+  color: black;
+}
+
+
+
+

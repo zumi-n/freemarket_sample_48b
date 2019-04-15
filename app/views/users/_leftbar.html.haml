@@ -1,8 +1,13 @@
 .leftbar
   .mypage-nav
-    = link_to '#', class: 'mypage-nav__list--item__mypage' do
-      %p マイページ
-      %i.fas.fa-chevron-right
+
+    - mypage = "selected"
+    
+    %ul.mypage-nav__list
+      %li
+        = link_to '#', class: "mypage-nav__list--item #{mypage}" do
+          マイページ
+          %i.fas.fa-chevron-right
 
     %ul.mypage-nav__list
       %li

@@ -17,12 +17,12 @@
           = image_tag('member_photo_noimage_thumb.png', class: "face", width: "60", height: "60")
         .mypage-profile__name
           = form_with do |f|
-            = f.text_field :nickname, class: "profile-nickname", placeholder: 'あああ'
+            = f.text_field :nickname, class: "profile-nickname", placeholder: '例）あざお☆セール中'
 
       .introduction
         .introduction__text
         = form_with do |f|
-          = f.text_area :introduction, type: 'input', cols: "30", rows: "10", class: 'intro-text', placeholder: '（例）ああああああああああああああああああああああああああああああああああああああああああああああああああああああ'
+          = f.text_area :introduction, type: 'input', cols: "30", rows: "10", class: 'intro-text', placeholder: '例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引きできるよう心がけていますので、商品や発想方法などご質問ありましたらお気軽にどうぞ♪'
 
         .introduction__btn
           = link_to '#', class: 'btn' do

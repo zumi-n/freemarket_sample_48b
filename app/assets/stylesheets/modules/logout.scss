@@ -1,0 +1,38 @@
+.logout{
+  width: 700px;
+  height: 179px;
+  background-color: white;
+  position: relative;
+  &__btn{
+    background-color: #ea352d;
+    position: absolute;
+    left: 190px;
+    bottom: 65px;
+    width: 320px;
+    height: 50px;
+    border: none;
+    text-decoration: none;
+    a{
+      color: white;
+      text-align: center;
+      line-height: 50px;
+    }
+  }
+}
+
+.mypage-nav__list--item__logout{
+  line-height: 16px;
+  width: 280px;
+  padding: 16px;
+  color: black;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #EEEEEE;
+  p{
+    font-weight: bold;
+  }
+  .fas.fa-chevron-right{
+    color: black;
+  }
+}

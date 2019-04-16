@@ -1,15 +1,12 @@
 .leftbar
   .mypage-nav
-
-    - mypage = "selected"
-    
     %ul.mypage-nav__list
+
       %li
-        = link_to '#', class: "mypage-nav__list--item #{mypage}" do
+        = link_to '#', class: 'mypage-nav__list--item' do
           マイページ
           %i.fas.fa-chevron-right
 
-    %ul.mypage-nav__list
       %li
         = link_to '#', class: 'mypage-nav__list--item' do
           お知らせ
@@ -52,7 +49,7 @@
 
       %li
         = link_to '#', class: 'mypage-nav__list--item' do
-          購入した商品-過去の取引"
+          購入した商品-過去の取引
           %i.fas.fa-chevron-right
 
       %li
@@ -77,6 +74,7 @@
 
   .merupay-nav-head
     %h3 メルペイ
+
     %ul.mypage-nav-list
       %li
         = link_to '#', class: 'mypage-nav__list--item' do
@@ -91,6 +89,7 @@
     .setting-nav-head
       %h3 設定
       %ul.mypage-nav-list
+
         %li
           = link_to '#', class: 'mypage-nav__list--item' do
             プロフィール
@@ -111,10 +110,9 @@
             メール・パスワード
             %i.fas.fa-chevron-right
 
-        %li
-          = link_to '#', class: 'mypage-nav__list--item' do
-            本人情報
-            %i.fas.fa-chevron-right
+        = link_to '#', class: 'mypage-nav__list--item__register' do
+          本人情報
+          %i.fas.fa-chevron-right
 
         %li
           = link_to '#', class: 'mypage-nav__list--item' do

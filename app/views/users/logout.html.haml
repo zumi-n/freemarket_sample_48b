@@ -1,0 +1,18 @@
+.wrapper
+
+  = render 'shared/header'
+
+  .container.clearfix
+
+    = render 'leftbar-logout'
+
+    .main
+      .content
+      .logout
+        .logout__btn
+          = link_to '#', class: 'btn' do
+            %p ログアウト
+
+  = render 'shared/sell-btn'
+  = render "shared/app-banner"
+  = render 'shared/footer'

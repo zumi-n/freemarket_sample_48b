@@ -1,0 +1,186 @@
+.head-profile{
+  width: 700px;
+  height: 50px;
+  border-bottom: thin solid #DDDDDD
+}
+
+.register-profile{
+  padding: 64px;
+  width: 700px;
+  height: 1435px;
+  background-color: white;
+  position: relative;
+  p{
+    font-size: 14px;
+  }
+}
+.upload-description{
+  margin-top: 8px;
+  display: block;
+  text-align: right;
+  .text-right{
+    span{
+      font-size: 14px;
+      color: #0099E8;
+    }
+    .fas.fa-chevron-right{
+      color: #0099E8;
+    }
+  }
+}
+
+.upload-description:hover,
+.lower-upload-description:hover{
+  opacity: 0.5;
+  span,strong{
+    border-bottom: thin solid #0099E8
+  }
+}
+
+.lower-upload-description{
+  margin-top: 140px;
+  display: block;
+  text-align: right;
+  .text-right--lower{
+    span{
+      font-size: 14px;
+      color: #0099E8;
+    }
+    .fas.fa-chevron-right{
+      color: #0099E8;
+    }
+  }
+}
+
+.form-require{
+  width: 572px;
+  margin-top: 40px;
+  p{
+    color: #888888
+  }
+  label{
+    font-weight: bold;
+    font-size: 14px;
+  }
+  span{
+    padding: 2px 4px;
+    margin-left: 8px;
+    border-radius: 3px;
+    background-color: #EA352D;
+    color: #FFFFFF;
+    font-size: 12px;
+  }
+  strong{
+    padding: 2px 4px;
+    margin-left: 8px;
+    border-radius: 3px;
+    background-color: #CCCCCC;
+    color: #FFFFFF;
+    font-size: 12px;
+  }
+  em{
+    color: #333333;
+    margin: 0 8px;
+    font-size: 14px;
+  }
+}
+
+.input-default{
+  margin-top: 8px;
+  width: 572px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 3px;
+  border: thin solid #DDDDDD;
+  .input-default::pleceholder{
+    line-height: center;
+  }
+}
+
+.form-require__date{
+  display: flex;
+  .form-require__date__year{
+    position: relative;
+    .fas.fa-chevron-down{
+      position: absolute;
+      left: 115px;
+      top: 25px;
+      color: #888888
+    }
+  }
+  .form-require__date__month{
+    position: relative;
+    .fas.fa-chevron-down{
+      position: absolute;
+      left: 115px;
+      top: 25px;
+      color: #888888
+    }
+  }
+  .form-require__date__day{
+    position: relative;
+    .fas.fa-chevron-down{
+      position: absolute;
+      left: 115px;
+      top: 25px;
+      color: #888888
+    }
+  }
+}
+
+.year-box,
+.month-box,
+.day-box,{
+  margin-top: 8px;
+  width: 140px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 3px;
+  border: thin solid #DDDDDD;
+}
+
+
+.form-require__prefecture{
+  position: relative;
+  .fas.fa-chevron-down{
+    position: absolute;
+    left: 545px;
+    top: 25px;
+    color: #888888
+  }
+}
+
+.register-profile__btn{
+  background-color: #ea352d;
+  position: absolute;
+  margin-top: 30px;
+  left: 64px;
+  bottom: 130px;
+  width: 572px;
+  height: 50px;
+  border: none;
+  text-decoration: none;
+  a{
+    color: white;
+    text-align: center;
+    line-height: 50px;
+  }
+}
+
+.mypage-nav__list--item__register{
+  line-height: 16px;
+  width: 280px;
+  padding: 16px;
+  color: black;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #EEEEEE;
+  p{
+    font-weight: bold;
+  }
+  .fas.fa-chevron-right{
+    color: black;
+  }
+}
+

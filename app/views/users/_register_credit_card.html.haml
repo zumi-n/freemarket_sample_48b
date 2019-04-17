@@ -1,0 +1,54 @@
+
+.wrapper
+
+  = render 'shared/header'
+
+  .container.clearfix
+
+    = render 'leftbar'
+
+    .main
+      .content
+        .content__title
+          %h2 クレジットカード情報入力
+        .content__credit-card
+          .content__credit-card__inner
+            = form_with do |f|
+              = f.label :カード番号, class: 'label'
+              %span 必須
+              = f.text_field :card_number, type: 'input', class: 'input-number', placeholder: '半角数字のみ'
+              .cards-images
+                = image_tag "credit-cards/visa.svg"
+                = image_tag "credit-cards/master-card.svg"
+                = image_tag "credit-cards/saison-card.svg"
+                = image_tag "credit-cards/jcb.svg"
+                = image_tag "credit-cards/american_express.svg"
+                = image_tag "credit-cards/dinersclub.svg"
+                = image_tag "credit-cards/discover.svg"
+              .cards-expire
+                = f.label :有効期限, class: 'label'
+                %span 必須
+                %br
+                .cards-expire__wrap
+                  = f.select :expiration_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'input-expire'
+                  %i.fas.fa-chevron-down.fa-lg
+                  %span.expire-text 月
+                  %br
+                .cards-expire__wrap
+                  = f.select :expiration_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'input-expire'
+                  %i.fas.fa-chevron-down.fa-lg
+                  %span.expire-text 年
+              .cards-expire
+                = f.label :セキュリティコード, class: 'label'
+                %span 必須
+                = f.text_field :secure_code, type: 'input', class: 'input-number', placeholder: 'カード背面4桁もしくは3桁の番号'
+              .credit-card--note
+                %i.fas.fa-question-circle
+                カード裏面の番号とは？
+              .content-bottom
+                = f.submit '追加する', class: 'content-bottom--add-btn'
+
+  = render 'shared/sell-btn'
+  = render "shared/app-banner"
+  = render 'shared/footer'
+

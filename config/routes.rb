@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :users, only: [:show, :edit] do
+  resources :users, only: [:show, :edit, :new] do
     member do
       get :logout
       get :register

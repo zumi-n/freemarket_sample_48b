@@ -40,7 +40,7 @@
   position: absolute;
   z-index: 0;
 }
-  .triangle::after {
+.triangle::after {
   content: "SOLD";
   display: block;
   top: 20px;

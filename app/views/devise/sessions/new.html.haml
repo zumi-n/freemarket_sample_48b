@@ -1,17 +1,50 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.wrapper
+  .sign-up-header
+    =link_to image_tag("mercari_logo_color.svg"),"/"
+  .single-main
+    .single-main__l.panel
+      .single-main__l.panel--new
+        %p アカウントをお持ちでない方はこちら
+        =link_to '新規登録会員', new_user_registration_path
+      .single-main__l.panel-sns
+        = link_to '#' ,class: 'btn-default btn-sns-facebook' do
+          %strong Facebookでログイン
+
+        = link_to '#', class: "btn-default btn-sns-google" do
+          = image_tag 'google icon', class: 'goole-icon'
+          %em Googleでログイン
+
+      .single-main__l.panel-form
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = f.email_field :email, class: 'email-box', placeholder: 'メールアドレス'
+          = f.password_field :password, autocomplete: "off", class: 'password-box', placeholder: 'パスワード'
+          .recaptcha_tags
+            .recaptcha_tags__content
+              .recaptcha_tags__content__box
+              .recaptcha_tags__content__norobot
+                %p 私はロボットではありません
+              .recaptcha_tags__content__icon
+                = image_tag('RecaptchaLogo.svg_.jpg')
+            .recaptcha_tags__privacy
+              = link_to 'プライバシー','#'
+              = link_to ' - 利用規約','#'
+
+          = f.submit "ログイン", class: "login-submit btn-default btn-red"
+          = link_to 'パスワードをお忘れの方', "", class: "owasure"
+
+  .single-footer
+    .nav
+      %ul.clearfix
+        %li
+          = link_to 'プライバシーポリシー','#'
+        %li
+          = link_to 'メルカリ利用規約','#'
+        %li
+          = link_to '特定商取引に関する表記','#'
+
+    .single-footer-logo
+      = link_to image_tag('fooer-logo-gray.svg'), '#', class: 'footer-gray-logo'
+    %p
+      %small
+        © 2019 Mercari
+        

@@ -1,0 +1,162 @@
+*{
+  background-color: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.sign-up-header{
+  width: 1403px;
+  height: 128px;
+  h1{
+    width: 185px;
+    height: 49px;
+    margin: auto;
+    padding-top: 40px;
+  }
+}
+
+.single-main-container{
+  width: 700px;
+  margin: 0 auto;
+  &__head{
+    padding: 32px 16px;
+    font-size: 22px;
+    background-color: white;
+    text-align: center;
+  }
+  &__inner{
+    padding: 64px;
+    border-top: 1px solid #f5f5f5;
+    background: white;
+    text-align: center;
+    &--content{
+      max-width: 320px;
+      margin: 0 auto;
+      & a{
+        display: block;
+        span{
+          color: #000000;
+        }
+        .far.fa-envelope{
+          font-size: 1.5em;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+.btn-default{
+  display: block;
+  width: 100%;
+  line-height:  48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.login-submit {
+  padding: 0;
+}
+
+.btn-mail{
+  background-color: #EEEEEE;
+}
+
+.btn-sns-facebook {
+  margin: 16px 0 0;
+  background: #385185;
+  color: white;
+  position: relative;
+  strong{
+    color: white;
+  }
+  &:before {
+  font-family: 'Font Awesome 5 Brands';
+  content: '\f082';
+  font-weight: 400;
+  font-size: 26px;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translate(0, -50%);
+  }
+}
+
+.btn-sns {
+  &:visited {
+  color: #fff;
+  }
+}
+.btn-sns-google {
+  margin: 16px 0 0;
+  background: #fff;
+  border: #979797 solid 1px;
+  position: relative;
+  em{
+    color: black;
+  }
+  .goole-icon{
+    color: black;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+  }
+  &:visited {
+  color:  black;
+  }
+}
+
+.fa-envelope{
+  position: relative;
+  float: left;
+  font-size: 25px;
+  color:#C0C0C0;
+  left: 15px;
+  top: 10px;
+}
+
+.single-footer{
+  width: 456px;
+  height: 220px;
+  margin: 0 473.5px;
+  padding: 40px 0;
+  .nav{
+    font-size: 12px;
+    color: #333333;
+    .clearfix{
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      a{
+        font-size: 12px;
+        color: #333333;
+      }
+      a:hover{
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+      li:nth-child(n){
+        margin-left: 20px;
+      }
+      li:nth-child(n+2){
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+.single-footer-logo img{
+  width: 80px;
+  height: 65px;
+  margin: 40px 188px 0;
+}
+
+p{
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #333333;
+}

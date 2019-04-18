@@ -72,14 +72,14 @@
     color: white;
   }
   &:before {
-  font-family: 'Font Awesome 5 Brands';
-  content: '\f082';
-  font-weight: 400;
-  font-size: 26px;
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  transform: translate(0, -50%);
+    font-family: 'Font Awesome 5 Brands';
+    content: '\f082';
+    font-weight: 400;
+    font-size: 26px;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translate(0, -50%);
   }
 }
 
@@ -105,7 +105,7 @@
     height: 20px;
   }
   &:visited {
-  color:  black;
+    color:  black;
   }
 }
 

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :users, only: [:show, :edit, :new] do
+  resources :items, only: [:index, :show]
+  resources :cards, only: [:index, :new]
+  resources :profiles, only: [:index, :edit]
+  resources :users, only: [:show] do
     member do
       get :logout
       get :register

@@ -1,18 +1,13 @@
-.items-container__upload.have-item-2
-  %ul
-    %li.item-container__upload__item
-      %figure.upload-figure.square
-        = image_tag 'list_item_example1.jpg'
-      .upload-btn
-        %a.upload-btn__edit{href: '#'}編集
-        %a.upload-btn__delete{href: '#'}削除
-    %li.item-container__upload__item
-      %figure.upload-figure.square
-        = image_tag 'list_item_example2.jpg'
-      .upload-btn
-        %a.upload-btn__edit{href: '#'}編集
-        %a.upload-btn__delete{href: '#'}削除
-.items-container__drop-box.have-item-2
+.items-container__upload
+  .items-container__upload__items.have-item-1
+    %ul
+      %li.upload-item
+        %figure.upload-figure.square
+          = image_tag 'list_item_example1.jpg'
+        .upload-btn
+          %a.upload-btn__edit{href: '#'}編集
+          %a.upload-btn__delete{href: '#'}削除
+.items-container__drop-box
   %input.items-container__drop-file{type: "file", name: "image1", style: "display: none;", multiple: true}
   %pre.visible-pc
     ドラッグ & ドロップ

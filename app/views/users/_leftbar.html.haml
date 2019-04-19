@@ -5,7 +5,7 @@
       %li
         = link_to '#', class: 'mypage-nav__list--item' do
           マイページ
-
+          %i.fas.fa-chevron-right
 
       %li
         = link_to '#', class: 'mypage-nav__list--item' do
@@ -88,11 +88,13 @@
 
     .setting-nav-head
       %h3 設定
-      = link_to '#', class: 'mypage-nav__list--item__profile' do
-        プロフィール
-
-        %i.fas.fa-chevron-right
       %ul.mypage-nav-list
+
+        %li
+          = link_to '#', class: 'mypage-nav__list--item' do
+            プロフィール
+            %i.fas.fa-chevron-right
+
         %li
           = link_to '#', class: 'mypage-nav__list--item' do
             発送元・お届け先住所変更
@@ -108,10 +110,9 @@
             メール・パスワード
             %i.fas.fa-chevron-right
 
-        %li
-          = link_to '#', class: 'mypage-nav__list--item' do
-            本人情報
-            %i.fas.fa-chevron-right
+        = link_to '#', class: 'mypage-nav__list--item' do
+          本人情報
+          %i.fas.fa-chevron-right
 
         %li
           = link_to '#', class: 'mypage-nav__list--item' do

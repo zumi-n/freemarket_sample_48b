@@ -1,0 +1,121 @@
+.wrapper
+
+  = render 'shared/header'
+
+  .container.clearfix
+
+    = render 'leftbar-register'
+
+    .main
+      .content
+        .head-profile
+          %span 本人情報の登録
+
+        .register-profile
+          .head-description
+            %p
+              お客様の本人情報をご登録ください。
+              %br
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          .upload-description
+            = link_to '#', class: 'text-right' do
+              %span 本人確認書類のアップロードについて
+              %i.fas.fa-chevron-right
+
+          .form-require
+            %label お名前
+            %span.form-require 必須
+            .form-require__lastname
+            = form_with do |f|
+              = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '例）山田'
+
+            .form-require__firstname
+            = form_with do |f|
+              = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '例）彩'
+
+
+          .form-require
+            %label お名前カナ
+            %span.form-require 必須
+            .form-require__kananame
+            = form_with do |f|
+              = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '例）ヤマダ'
+
+            .form-require__kananame
+            = form_with do |f|
+              = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '例）アヤ'
+
+          .form-require
+            %label 生年月日
+            %span.form-require 必須
+            .form-require__date
+              .form-require__date__year
+                = form_with do |f|
+                  = f.text_field :introduction, type: 'input', class: 'year-box', placeholder: '--'
+                  %i.fas.fa-chevron-down
+                  %em.year 年
+
+              .form-require__date__month
+                = form_with do |f|
+                  = f.text_field :introduction, type: 'input', class: 'month-box', placeholder: '--'
+                  %i.fas.fa-chevron-down
+                  %em.month 月
+
+              .form-require__date__day
+                = form_with do |f|
+                  = f.text_field :introduction, type: 'input', class: 'day-box', placeholder: '--'
+                  %i.fas.fa-chevron-down
+                  %em.day 日
+
+            %p ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
+
+
+          .form-require
+            %label 郵便番号
+            %strong.form-require 任意
+            .form-require__zipcode
+            = form_with do |f|
+              = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '例）1234567'
+
+          .form-require
+            %label 都道府県
+            %strong.form-require 任意
+            .form-require__prefecture
+              = form_with do |f|
+                = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '--'
+                %i.fas.fa-chevron-down
+
+          .form-require
+            %label 市区町村
+            %strong.form-require 任意
+            .form-require__city
+            = form_with do |f|
+              = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '例）横浜市緑区'
+
+          .form-require
+            %label 番地
+            %strong.form-require 任意
+            .form-require__number
+            = form_with do |f|
+              = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '例）青山1-1-1'
+
+          .form-require
+            %label 建物名
+            %strong.form-require 任意
+            .form-require__building
+            = form_with do |f|
+              = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '例）柳ビル103'
+
+          .register-profile__btn
+            = link_to '#', class: 'btn' do
+              %span 登録する
+
+          .lower-upload-description
+            = link_to '#', class: 'text-right--lower' do
+              %span 本人情報の登録について
+              %i.fas.fa-chevron-right
+
+
+  = render 'shared/sell-btn'
+  = render "shared/app-banner"
+  = render 'shared/footer'

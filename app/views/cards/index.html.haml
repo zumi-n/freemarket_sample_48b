@@ -1,0 +1,29 @@
+
+.wrapper
+
+  = render 'shared/header'
+
+  .container.clearfix
+
+    = render 'users/leftbar'
+
+    .main
+      .content
+        .content__title
+          %h2 支払い方法
+        .content__credit-cards
+          %h3 クレジットカード一覧
+          .content__credit-cards__add
+            .content__credit-cards__add--btn
+              = link_to '#', class: 'btn' do
+                %p.white_color
+                  %i.far.fa-credit-card
+                  クレジットカードを追加する
+          = link_to '#', class: 'explain-payment' do
+            %span 支払い方法について
+            %i.fas.fa-angle-right
+
+  = render 'shared/sell-btn'
+  = render "shared/app-banner"
+  = render 'shared/footer'
+

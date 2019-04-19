@@ -5,13 +5,13 @@
 }
 
 .sign-up-header{
-  width: 1403px;
   height: 128px;
-  h1{
+  text-align: center;
+  vertical-align: middle;
+  img{
     width: 185px;
     height: 49px;
-    margin: auto;
-    padding-top: 40px;
+    margin-top: 40px;
   }
 }
 
@@ -119,9 +119,9 @@
 }
 
 .single-footer{
-  width: 456px;
   height: 220px;
-  margin: 0 473.5px;
+  width: 456px;
+  margin: 0 auto;
   padding: 40px 0;
   .nav{
     font-size: 12px;
@@ -148,12 +148,14 @@
   }
 }
 
-.single-footer-logo img{
-  width: 80px;
-  height: 65px;
-  margin: 40px 188px 0;
+.single-footer-logo {
+  text-align: center;
+  img{
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+  }
 }
-
 p{
   margin-top: 8px;
   text-align: center;

@@ -5,8 +5,8 @@
         %figure.upload-figure.square
           = image_tag 'list_item_example1.jpg'
         .upload-btn
-          %a.upload-btn__edit{href: '#'}編集
-          %a.upload-btn__delete{href: '#'}削除
+          = link_to('編集', '#', {class: 'upload-btn__edit'})
+          = link_to('削除', '#', {class: 'upload-btn__delete'})
 .items-container__drop-box
   %input.items-container__drop-file{type: "file", name: "image1", style: "display: none;", multiple: true}
   %pre.visible-pc

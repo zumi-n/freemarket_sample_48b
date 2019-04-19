@@ -1,4 +1,4 @@
 class ItemsController < ApplicationController
-  def list
+  def new
   end
 end

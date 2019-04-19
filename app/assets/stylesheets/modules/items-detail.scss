@@ -1,6 +1,6 @@
 .items-box-container{
   width: 700px;
-  margin: 40px 351px 0;
+  margin: 40px auto 0;
   padding: 24px 40px 40px;
   background-color: white;
   .item-name{
@@ -74,6 +74,7 @@
     p,span,.fas.fa-chevron-right{
       text-decoration: none;
       color: #0099E8;
+      text-align: left;
     }
     .rating{
       display: flex;
@@ -123,11 +124,11 @@
   border: none;
   text-decoration: none;
   a{
-    color: white;
     text-align: center;
     line-height: 60px;
   }
   p{
+    color: white;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -230,6 +231,9 @@
   width: 580px;
   border-radius: 12px;
   background: #EEF0F4;
+  p{
+    text-align: left;
+  }
 }
 
 .says:after {

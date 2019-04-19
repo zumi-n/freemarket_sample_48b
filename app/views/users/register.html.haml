@@ -82,8 +82,10 @@
             %strong.form-require 任意
             .form-require__prefecture
               = form_with do |f|
-                = f.text_field :introduction, type: 'input', class: 'input-default', placeholder: '--'
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: 'input-default'}
                 %i.fas.fa-chevron-down
+
+
 
           .form-require
             %label 市区町村

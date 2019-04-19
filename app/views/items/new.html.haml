@@ -1,0 +1,121 @@
+.single-container
+  %header.single-header
+    %h1
+      = link_to('https://www.mercari.com/jp/') do
+        = image_tag 'mercari_logo_color.svg', alt: 'mercari', height: '49px', width: '185px'
+  %main.single-main
+    %section.buy-item-container
+      #sell-container
+        .container__inner
+          %h2.single-head
+            商品の情報を入力
+          = form_with do |f|
+            .upload-box
+              %h3.upload-box__head
+                出品画像
+                %span.form-require
+                  必須
+              %p
+                最大10枚までアップロードできます
+              .items-container.clearfix.state-image-number-10
+                =render partial: "upload"
+            .content
+              .form-group
+                = f.label :name do
+                  商品名
+                  %span.form-require 必須
+                %div
+                  = f.text_field :name, class: 'input-default', placeholder: "商品名（必須 40文字まで)"
+              .form-group
+                = f.label :description do
+                  商品の説明
+                  %span.form-require 必須
+                = text_area :item, :description, class: 'textarea-default', size: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+            .content.clearfix
+              %h3.sub-head 商品の詳細
+              .form-box
+                .form-group
+                  = f.label :category do
+                    カテゴリー
+                    %span.form-require 必須
+                  %div
+                    .select-wrap
+                      = f.select :name, [["レディース", "1"], ["メンズ", "2"], ["ベビー・キッズ","3"], ["インテリア・住まい・小物","4"], ["本・音楽・ゲーム","5"], ["おもちゃ・ホビー・グッズ","1328"], ["コスメ・香水・美容","6"], ["家電・スマホ・カメラ","7"], ["スポーツ・レジャー","8"], ["ハンドメイド","9"], ["チケット","1027"], ["自転車・オートバイ","1318"], ["その他", "10"]], {prompt: "---"}, {class: 'select-default'}
+                      %i.fas.fa-chevron-down.fa-lg
+                .form-group
+                  = f.label :detail do
+                    商品の詳細
+                    %span.form-require 必須
+                  .select-wrap
+                    = f.select :detail, [["新品・未使用", "1"], ["未使用に近い", "2"], ["目立った傷や汚れなし", "3"], ["やや傷や汚れあり", "4"], ["傷や汚れあり", "5"], ["全体的に状態が悪い", "6"],], {prompt: "---"}, {class: "select-default"}
+                    %i.fas.fa-chevron-down.fa-lg
+            .content.clearfix
+              %h3.sub-head 配送について
+              = link_to "/jp/help_center/article/68/", class: "form-question" do
+                %i.fas.fa-question-circle
+              .form-box
+                .form-group
+                  = f.label :deliveryFee do
+                    配送料の負担
+                    %span.form-require 必須
+                  %div
+                    .select-wrap
+                      = f.select :payer, [["送料込み(出品者負担)", "2"], ["着払い(購入者負担)", "1"]], {prompt: "---"}, {class: 'select-default'}
+                      %i.fas.fa-chevron-down.fa-lg
+                .form-group
+                  = f.label :deriveryFrom do
+                    発送元の地域
+                    %span.form-require 必須
+                  .select-wrap
+                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: 'select-default'}
+                    %i.fas.fa-chevron-down.fa-lg
+                .form-group
+                  = f.label :deriveryDays do
+                    発送までの日数
+                    %span.form-require 必須
+                  .select-wrap
+                    = f.select :days, [["1~2日で発送", "1"], ["2~3日で発送", "2"], ["4~7日で発送", "3"]], {prompt: "---"}, {class: 'select-default'}
+                    %i.fas.fa-chevron-down.fa-lg
+            .content.clearfix
+              %h3.sub-head 販売価格(300〜9,999,999)
+              = link_to "/jp/help_center/article/64/", class: "form-question" do
+                %i.fas.fa-question-circle
+              .form-box
+                %ul.price
+                  %li.form-group
+                    .clearfix
+                      = f.label :price, class: "l-left" do
+                        価格
+                        %span.form-require 必須
+                      .l-right.price-input
+                        ¥
+                        .price-input__container
+                          = f.text_field :price, class: 'input-default', placeholder: "例）300"
+                  %li.clearfix
+                    .l-left 販売手数料 (10%)
+                    .l-right -
+                  %li.clearfix.bold
+                    .l-left 販売利益
+                    .l-right -
+            .modal{role: "dialog", tabindex: "-1"}
+              .modal-inner
+            .content.btn-box
+              .btn-box__notes
+                %p.btn-box__notes__note
+                  = link_to '禁止されている出品', '/jp/help_center/getting_started/prohibited_items/'
+                  、
+                  = link_to '行為', '/jp/help_center/getting_started/prohibited_conduct/'
+                  を必ずご確認ください。
+                %p.btn-box__notes__note
+                  またブランド品でシリアルナンバー等がある場合はご記載ください。
+                  = link_to '偽ブランドの販売','/jp/help_center/getting_started/counterfeit_goods/'
+                  は犯罪であり処罰される可能性があります。
+                %p.btn-box__notes__note
+                  また、出品をもちまして
+                  = link_to '加盟店規約', '/jp/seller_terms/'
+                  に同意したことになります。
+              = f.submit "出品する", {class: "btn-box__default btn-box--red"}
+              .btn-box__default.btn-box--gray もどる
+          .overlay
+  = render 'form-footer'
+

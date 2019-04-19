@@ -1,0 +1,15 @@
+.items-container__upload
+  .items-container__upload__items.have-item-1
+    %ul
+      %li.upload-item
+        %figure.upload-figure.square
+          = image_tag 'list_item_example1.jpg'
+        .upload-btn
+          = link_to('編集', '#', {class: 'upload-btn__edit'})
+          = link_to('削除', '#', {class: 'upload-btn__delete'})
+.items-container__drop-box
+  %input.items-container__drop-file{type: "file", name: "image1", style: "display: none;", multiple: true}
+  %pre.visible-pc
+    ドラッグ & ドロップ
+    またはクリックしてアップロード
+  %i.icon-camera

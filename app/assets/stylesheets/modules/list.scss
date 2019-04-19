@@ -1,0 +1,422 @@
+body {
+  position: relative;
+  background: $background;
+  min-height: 100%;
+  font-size: 14px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  .single-container {
+    padding: 0 0 220px;
+    .single-header {
+      height: 128px;
+      text-align: center;
+        h1 {
+          margin: 40px 0 0 ;
+          display: inline-block;
+          a {
+            width: 185px;
+            height: 49px;
+            line-height: 49px;
+            display: inline-block;
+          }
+        }
+    }
+    .single-main {
+      .buy-item-container {
+        width: 700px;
+        margin: 0 auto;
+        background: $content-back;
+        .single-head {
+          padding: 32px 16px;
+          font-size: 22px;
+          line-height: 1.5;
+          text-align: center;
+        }
+        form {
+          border-top: 1px solid $border;
+          .upload-box {
+            width: 620px;
+            padding: 40px;
+            &__head {
+              font-size: 16px;
+              .form-require {
+                background: $required-mark;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 3px;
+                color: $white;
+                font-size: 12px;
+                vertical-align: top;
+              }
+            }
+            p {
+              margin: 8px 0 0;
+              line-height: 1.5;
+            }
+            .items-container {
+              display: inline;
+              display: flex;
+              margin: 16px auto 0;
+            @media screen and (min-width: 768px) {
+              .items-container {
+                display: block;
+                width: 620px;
+              }
+            }
+              &__upload {
+                display: inline;
+                &__items {
+                  display: inline;
+                  ul {
+                    display: inline;
+                    width: 100%;
+                    .upload-item:first-child {
+                      margin-left: 0;
+                    }
+                    .upload-item {
+                      position: relative;
+                      display: inline-block;
+                      width: 116px;
+                      border: 1px solid $border;
+                      vertical-align: top;
+                      .upload-figure {
+                        position: relative;
+                        overflow: hidden;
+                        background: #f5f5f5;
+                        width: auto;
+                        height: 116px;
+                        margin: 0;
+                        padding: 0;
+                        img {
+                          width: 100%;
+                        }
+                      }
+                      .upload-btn {
+                        font-size: 14px;
+                        width: 100%;
+                        display: flex;
+                        a {
+                          display: inline-block;
+                          width: 50%;
+                          background: $upload-btn-area;
+                          line-height: 44px;
+                          text-align: center;
+                          color: $blue;
+                        }
+                        a:last-child {
+                          border-left: 0.5px solid $border;
+                        }
+                      }
+                    }
+                  }
+                }
+
+              }
+              &__drop-box {
+                position: relative;
+                width: 80%;
+                min-height: 162px;
+                padding: 40px;
+                margin-left: 2%;
+                background: $upload-btn-area;
+                border: 1px dashed $border;
+                text-align: center;
+                // font-size: 0;
+                .itenm-container__drop-file {
+                  display: none;
+                  border: 0;
+                  outline: 0;
+                }
+                .visible-pc {
+                  display: none;
+                }
+                .icon-camera {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                }
+              }
+              @media screen and (min-width: 768px) {
+                .items-container__drop-box {
+                  position: relative;
+                  margin-left: 2%;
+                  padding: 40px;
+                  width: 490px;
+                  .visible-pc {
+                    display: block;
+                    position: absolute;
+                    top: 30%;
+                    left: 16px;
+                    right: 16px;
+                    text-align: center;
+                    line-height: 1.5;
+                  }
+                  .icon-camera {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+          .content {
+            padding: 40px;
+            border-block-start: 1px solid $border;
+            .sub-head {
+              color: $sub-head;
+              font-size: 14px;
+              font-weight: bold;
+              display: block;
+            }
+            .fa-question-circle {
+              margin-top: 4px;
+              width: 14px;
+              height: 14px;
+              line-height: 14px;
+              text-align: center;
+              color: $blue;
+            }
+            .form-box {
+              margin: 40px 0 0;
+              .price{
+                li:first-child {
+                  padding: 0 0 24px;
+                  border: 0;
+                  .l-left {
+                    line-height: 48px;
+                  }
+                }
+                li {
+                  padding: 24px 0;
+                  border-block-start: 1px solid $border;
+                  .l-left {
+                    width: 50%;
+                    line-height: 14px;
+                  }
+                  .price-input {
+                    text-align: right;
+                    color: #333333;
+                    div {
+                      display: inline-block;
+                      width: 80%;
+                      margin: 0 0 0 5%;
+                      .input-default {
+                        margin: 0;
+                        text-align: right;
+                      }
+                    }
+                  }
+                  .l-right {
+                    width: 50%;
+                    text-align: right;
+                  }
+                }
+                .clearfix {
+                  display: flex;
+                }
+                .bold {
+                  font-weight: 600;
+                  .l-left {
+                    font-size: 16px;
+                  }
+                  .l-right {
+                    font-size: 34px;
+                  }
+                }
+              }
+            }
+            @media screen and (min-width: 768px) {
+              .sub-head {
+                float: left;
+              }
+              .form-box {
+                float: right;
+                width: 400px;
+                margin: 0;
+              }
+            }
+              .form-group:first-child {
+                margin: 0;
+              }
+              .form-group {
+                margin: 40px 0 0;
+                label {
+                  font-weight: 600;
+                  display: inline-block;
+                  span {
+                    background: $required-mark;
+                    margin: 0 0 0 8px;
+                    padding: 2px 4px;
+                    border-radius: 3px;
+                    color: $white;
+                    font-size: 12px;
+                    vertical-align: top;
+                  }
+                }
+                .input-default {
+                  width: 100%;
+                  margin: 8px 0 0;
+                  height: 48px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid $border;
+                  background: $content-back;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+                .textarea-default {
+                  display: block;
+                  width: 100%;
+                  min-height: 104px;
+                  margin: 8px 0 0;
+                  padding: 10px;
+                  border: 1px solid $border;
+                  background: $content-back;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+                .select-wrap {
+                  margin: 8px 0 0;
+                  position: relative;
+                  background: $content-back;
+                  select {
+                    width: 100%;
+                    -webkit-appearance: none;
+                  }
+                  .select-default {
+                    position: relative;
+                    z-index: 2;
+                    height: 48px;
+                    padding: 0 16px;
+                    border-radius: 4px;
+                    border: 1px solid $border;
+                    background: 0;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    cursor: pointer;
+                    appearance: none;
+                  }
+                  .fa-chevron-down {
+                    position: absolute;
+                    right: 16px;
+                    bottom: 35%;
+                    z-index: 2;
+                    color: $arrow;
+                  }
+                }
+              }
+          }
+          .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 3000;
+            overflow-x: hidden;
+            overflow-y: auto;
+            .modal-inner {
+              position: relative;
+              overflow: hidden;
+              width: 95%;
+              max-width: 375px;
+              margin: 8px auto;
+              background: #fff;
+            }
+            @media screen and (min-width: 768px) {
+              .modal-inner {
+                max-width: none;
+                width: 600;
+                margin: 20px auto;
+              }
+            }
+          }
+          .btn-box {
+            &__notes {
+              &__note {
+                line-height: 1.5;
+                a {
+                  color: $blue;
+                }
+              }
+            }
+            &--red {
+              margin: 40px 0 0;
+              background: $red;
+              border: 1px solid $red;
+              color: $white;
+            }
+            &__default {
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              cursor: pointer;
+              text-align: center;
+              transition: all ease-out .3s;
+            }
+            &--gray {
+              width: 45%;
+              margin: 24px auto 0;
+              background: #aaa;
+              border: 1px solid #aaa;
+              color: $white;
+            }
+            &--gray:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+    .single-footer {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      height: 250px;
+      padding: 40px 0;
+      text-align: center;
+      ul {
+        font-size: 0;
+      }
+      li:first-child {
+        margin: 0;
+      }
+      li {
+        margin: 16px 0 0;
+        font-size: 12px;
+      }
+      @media screen and (min-width: 768px) {
+        li {
+          display: inline-block;
+          margin: 0 0 0 16px;
+        }
+      }
+      a {
+        display: block;
+        color: #333;
+      }
+      &-logo {
+        width: 80px;
+        height: 65px;
+        margin: 40px auto 0;
+        img {
+          margin: 0;
+        }
+      }
+      p {
+        margin: 8px 0 0;
+      }
+      small {
+        font-size: 13px;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .single-footer {
+        width: 456px;
+        height: 220px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

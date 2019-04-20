@@ -21,15 +21,25 @@ body {
         }
     }
     .single-main {
+      @media screen and (min-width: 768px) {
+        .buy-item-container {
+          width: 700px;
+          margin: 0 auto
+        }
+      }
       .buy-item-container {
-        width: 700px;
-        margin: 0 auto;
         background: $content-back;
         .single-head {
-          padding: 32px 16px;
-          font-size: 22px;
+          padding: 24px 8px;
+          font-size: 18px;
           line-height: 1.5;
           text-align: center;
+        }
+        @media screen and (min-width: 768px) {
+          .single-head {
+            padding: 32px 16px;
+            font-size: 22px;
+          }
         }
         form {
           border-top: 1px solid $border;

@@ -1,0 +1,58 @@
+.single-container
+  %header.single-header
+    %h1
+      = link_to('https://www.mercari.com/jp/') do
+        = image_tag 'mercari_logo_color.svg', alt: 'mercari', height: '49px', width: '185px'
+  %main.single-main
+    %section.buy-item-container
+      %h2.single-head
+        購入を確定しますか？
+      %section.buy-content.buy-item
+        .buy-content__inner
+          %h3.buy-item__image
+            = image_tag 'list_item_example1.jpg'
+          %p.buy-item__name.bold
+            美品！限定ピカチュウぬいぐるみ 値下げ有り！
+          = form_with class: "buy-form" do |f|
+            %p.buy-item__price--ja.bold
+              ¥ 1.499
+              %span.item-shipping-fee.f14.bold 送料込み
+            %ul.buy-item__accordion.not-have
+              %li.buy-item__accordion--parent
+                .buy-item__accordion--child
+                  ポイントはありません
+            %ul.buy-item__payment
+              %li.buy-item__payment--list.buy-you-pay.bold
+                .buy-price 支払金額
+                .buy-price
+                  %span{data: {buy: {pay: "1499"}}} ¥ 1,499
+              = f.submit "購入する", {class: "btn-box__default btn-box--red"}
+      %section.buy-content.buy-user__info
+        .buy-content__inner
+          %h3 配送先
+          %address.buy-user__info--text
+            〒165-0033(postal_code)
+            %br
+            東京都(prefecture) 中野区(city)
+            ◯◯5-1-11(street_address)
+            △△◯アパート(building)
+            %br
+            愛川(family_name_kanji) 令菜(first_name_kanji)
+          %p.buy-user__info--text
+          = link_to "#", {class: 'buy-user__info--text--fix'} do
+            %span 変更する
+            %i.fas.fa-chevron-right
+      %section.buy-content.buy-user__info{data: {buy: 'pay-method'}}
+        .buy-content__inner
+          %h3 支払方法
+          %p.buy-user__info--text
+            ************1046(token)
+            %br
+            03(expiration_month)/22(expiration_year)
+          %figure
+            = image_tag 'credit-cards/jcb.svg', alt: 'jcb', height: '20', width: '26'
+          %p
+          = link_to "#", {class: 'buy-user__info--text--fix'} do
+            %span 変更する
+            %i.fas.fa-chevron-right
+  = render 'form-footer'

@@ -5,7 +5,7 @@
 
   .container.clearfix
 
-    = render 'leftbar'
+    = render 'users/leftbar'
 
     .main
       .content
@@ -16,7 +16,7 @@
           .content__credit-cards__add
             .content__credit-cards__add--btn
               = link_to '#', class: 'btn' do
-                %p
+                %p.white_color
                   %i.far.fa-credit-card
                   クレジットカードを追加する
           = link_to '#', class: 'explain-payment' do

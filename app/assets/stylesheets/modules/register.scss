@@ -56,7 +56,8 @@
   width: 572px;
   margin-top: 40px;
   p{
-    color: #888888
+    color: #888888;
+    text-align: left;
   }
   label{
     font-weight: bold;
@@ -92,6 +93,7 @@
   padding: 10px 16px 8px;
   border-radius: 3px;
   border: thin solid #DDDDDD;
+  background-color: white;
   .input-default::pleceholder{
     line-height: center;
   }
@@ -101,42 +103,43 @@
   display: flex;
   .form-require__date__year{
     position: relative;
-    .fas.fa-chevron-down{
-      position: absolute;
-      left: 115px;
-      top: 25px;
-      color: #888888
+    .arrow-year{
+      .fas.fa-chevron-down{
+        position: absolute;
+        left: 115px;
+        top: 25px;
+        color: #888888
+      }
     }
-  }
-  .form-require__date__month{
-    position: relative;
-    .fas.fa-chevron-down{
-      position: absolute;
-      left: 115px;
-      top: 25px;
-      color: #888888
+    .arrow-month{
+      .fas.fa-chevron-down{
+        position: absolute;
+        left: 280px;
+        top: 25px;
+        color: #888888
+      }
     }
-  }
-  .form-require__date__day{
-    position: relative;
-    .fas.fa-chevron-down{
-      position: absolute;
-      left: 115px;
-      top: 25px;
-      color: #888888
+    .arrow-date{
+      .fas.fa-chevron-down{
+        position: absolute;
+        left: 445px;
+        top: 25px;
+        color: #888888
+      }
     }
   }
 }
 
-.year-box,
-.month-box,
-.day-box,{
+#_birth_date_1i,
+#_birth_date_2i,
+#_birth_date_3i{
   margin-top: 8px;
   width: 140px;
   height: 48px;
   padding: 0 16px;
   border-radius: 3px;
   border: thin solid #DDDDDD;
+  background-color: white;
 }
 
 
@@ -160,9 +163,9 @@
   height: 50px;
   border: none;
   text-decoration: none;
-  a{
+  text-align: center;
+  span{
     color: white;
-    text-align: center;
     line-height: 50px;
   }
 }

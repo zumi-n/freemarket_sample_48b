@@ -1,11 +1,14 @@
 class ItemsController < ApplicationController
-  def new
-  end
 
   def index
+    @items = Item.all.includes(:images).sample(4)
+  end
+
+  def new
   end
 
   def show
   end
+
 
 end

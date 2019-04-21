@@ -4,24 +4,25 @@
   .owl-carousel
     = image_tag 'carousel/banner-bokurano-heisei.jpg'
   .main-box
-    %h2 出品中のアイテム
+    %h2 ピックアップカテゴリー
 
     %section.main-box__items
       %h3
-        =link_to "新着アイテム", "#"
+        =link_to "レディース 新着アイテム", "#"
 
       .main-box__items__row
-        =render "shared/item"
-        =render "shared/item"
-        =render "shared/item"
-        =render "shared/item"
+        =render partial:'shared/item', locals: { items: @items }
 
-      .main-box__items__row
-        =render "shared/item"
-        =render "shared/item"
-        =render "shared/item"
-        =render "shared/item"
+  .main-box
+    %h2 ピックアップブランド
 
+    %section.main-box__items
+
+      %h3
+        =link_to "シャネル新着アイテム", "#"
+
+      .main-box__items__row-brand
+        =render partial:'shared/item', locals: { items: @items }
 
   =render "shared/sell-btn"
 

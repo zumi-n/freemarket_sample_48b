@@ -4,17 +4,34 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|nickname|string|null: false|
 |email|string|null: false , unique: true|
-|phone_number|string|null: false , unique: true|
-|password|string|null: false|
-|evaluation|integer|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birthday_year|integer|null: false|
+|birthday_month|integer|null: false|
+|birthday_day|integer|null: false|
+|evaluation|integer||
 
 ### Association
 - has_one  :address
 - has_one  :profile
+- has_one  :phonenumber
 - has_many :cards
 - has_many :items
 - has_many :comments
+
+## phonenumber table
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false , foreign_key: true|
+|phonenumber|integer|null: false , unique: true||
+
+### Association
+- belongs_to :user
 
 ## profiles table
 
@@ -33,16 +50,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false , foreign_key: true|
-|family_name_kanji|string|null: false|
-|first_name_kanji|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|birthday|date|null: false|
 |postal_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |street_address|string|null: false|
 |building|string||
+|telnumber|integer||
 
 ### Association
 - belongs_to :user
@@ -89,7 +102,6 @@
 |method|string|null: false|
 |area|string|null: false|
 |date|string|
-
 
 ### Association
 - belongs_to :item

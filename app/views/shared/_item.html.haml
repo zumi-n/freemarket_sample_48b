@@ -1,9 +1,7 @@
 - items.each do |item|
   .main-box__items__row--item-box
-  - count = 0
-  - item.images.each do |image|
     =link_to '#' do
-      = image_tag((image.file), width: '213', height: '213')
+      = image_tag((item.images.first.file), width: '213', height: '213') if item.images.present?
       .main-box__items__row--item-box--body
         %h4
         = item.name
@@ -11,6 +9,3 @@
           ¥
           = item.price
           %p (税込)
-    - count += 1
-    - if count == 1 then
-      - break

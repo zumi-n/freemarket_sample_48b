@@ -1,4 +1,20 @@
 $(function(){
+  $('#item_price').keyup(function(){
+    var price = $(this).val();
+    if ( price >= 300 ){
+      var commission = Math.ceil(price * 0.1) ;
+      var profit = price - commission
+      $('#item_commission').text('¥' + commission);
+      $('#item_profit').text('¥' + profit);
+    } else{
+      $('#item_commission').text('-');
+      $('#item_profit').text('-');
+    }
+  });
+});
+
+
+$(function(){
   $('#sell-item').on('submit', function(e){
     e.preventDefault();
     $('.fail-comment').removeClass("hide");

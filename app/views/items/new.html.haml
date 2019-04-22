@@ -18,8 +18,8 @@
                     必須
                 %p
                   最大10枚までアップロードできます
-                = image.label :image, class: '' do
-                  = image.file_field :image, style: 'display: none;'
+                = image.label :file, class: '' do
+                  = image.file_field :file, style: 'display: none;'
                   .items-container.clearfix.state-image-number-10
                     =render partial: "upload"
                   %ul.hide.fail-comment#image-error
@@ -44,12 +44,12 @@
               %h3.sub-head 商品の詳細
               .form-box
                 .form-group
-                  = item.label :condition do
+                  = item.label :category_id do
                     カテゴリー
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = item.select :condition, [["レディース", "1"], ["メンズ", "2"], ["ベビー・キッズ","3"], ["インテリア・住まい・小物","4"], ["本・音楽・ゲーム","5"], ["おもちゃ・ホビー・グッズ","1328"], ["コスメ・香水・美容","6"], ["家電・スマホ・カメラ","7"], ["スポーツ・レジャー","8"], ["ハンドメイド","9"], ["チケット","1027"], ["自転車・オートバイ","1318"], ["その他", "10"]], {prompt: "---"}, {class: 'select-default'}
+                      = item.select :category_id, [["レディース", "1"], ["メンズ", "2"], ["ベビー・キッズ","3"], ["インテリア・住まい・小物","4"], ["本・音楽・ゲーム","5"], ["おもちゃ・ホビー・グッズ","1328"], ["コスメ・香水・美容","6"], ["家電・スマホ・カメラ","7"], ["スポーツ・レジャー","8"], ["ハンドメイド","9"], ["チケット","1027"], ["自転車・オートバイ","1318"], ["その他", "10"]], {prompt: "---"}, {class: 'select-default'}
                       %i.fas.fa-chevron-down.fa-lg
                   %ul.hide.fail-comment#category-error
                     %li 選択してください
@@ -69,12 +69,12 @@
                   %i.fas.fa-question-circle
                 .form-box
                   .form-group
-                    = deli.label :deliveryFee do
+                    = deli.label :payer do
                       配送料の負担
                       %span.form-require 必須
                     %div
                       .select-wrap
-                        = deli.select :burden, [["送料込み(出品者負担)", "2"], ["着払い(購入者負担)", "1"]], {prompt: "---"}, {class: 'select-default'}
+                        = deli.select :payer, [["送料込み(出品者負担)", "2"], ["着払い(購入者負担)", "1"]], {prompt: "---"}, {class: 'select-default'}
                         %i.fas.fa-chevron-down.fa-lg
                     %ul.hide.fail-comment#payer-error
                       %li 選択してください
@@ -120,15 +120,15 @@
                       .l-right.price-input
                         ¥
                         .price-input__container
-                          = item.text_field :price, class: 'input-default', placeholder: "例）300"
+                          = item.text_field :price, class: 'input-default', id: 'item_price', placeholder: "例）300"
                     #price-error.fail-comment.hide
                       300以上9999999以下で入力してください
                   %li.clearfix
                     .l-left 販売手数料 (10%)
-                    .l-right -
+                    .l-right#item_commission -
                   %li.clearfix.bold
                     .l-left 販売利益
-                    .l-right -
+                    .l-right#item_profit -
             .modal{role: "dialog", tabindex: "-1"}
               .modal-inner
             .content.btn-box

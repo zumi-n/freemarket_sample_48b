@@ -15,28 +15,13 @@
         %i.fas.fa-angle-double-right
       .swiper-pagination
     .main-box
-      %h2 出品中のアイテム
+      %h2 ピックアップカテゴリー
+      = render 'shared/item', items: @items
 
-      %section.main-box__items
-        %h3
-          =link_to "新着アイテム", "#"
+    =render "shared/sell-btn"
 
-        .main-box__items__row
-          =render "shared/item"
-          =render "shared/item"
-          =render "shared/item"
-          =render "shared/item"
+    =render "shared/app-banner"
 
-        .main-box__items__row
-          =render "shared/item"
-          =render "shared/item"
-          =render "shared/item"
-          =render "shared/item"
-
-  =render "shared/sell-btn"
-
-  =render "shared/app-banner"
-
-  =render "shared/footer"
+    =render "shared/footer"
 
 = javascript_include_tag "swiper", "carousel"

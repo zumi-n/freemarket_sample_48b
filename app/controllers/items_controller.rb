@@ -1,11 +1,16 @@
 class ItemsController < ApplicationController
+
+  def index
+    @items = Item.includes(:images).sample(4)
+  end
+
   def new
   end
 
-  def index
+  def show
   end
 
-  def show
+  def confirm
   end
 
 end

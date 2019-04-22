@@ -1,8 +1,8 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "config/common_setting";
 @import "config/variable";
+@import "config/common_setting";
 @import "modules/users";
 @import "modules/leftbar-mypage";
 @import "modules/items";
@@ -14,4 +14,5 @@
 @import "modules/register";
 @import "modules/items-detail";
 @import "modules/signup";
-@import "modules/signin"
+@import "modules/signin";
+@import "modules/purchase-confirm";

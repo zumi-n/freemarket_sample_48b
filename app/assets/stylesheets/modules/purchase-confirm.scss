@@ -1,0 +1,94 @@
+.buy-content:first-of-type {
+  margin: 0;
+}
+.buy-content {
+  margin: 40px 0 0;
+  padding: 24px 12.5% 0;
+  border-block-start: 1px solid $border;
+  &__inner {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+.buy-content:last-of-type {
+  padding: 40px 12.5%;
+}
+
+.buy-item {
+  text-align: center;
+  img {
+    width: 148px;
+  }
+  &__name {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  &__payment--list {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+  .btn-box--red {
+    margin: 16px 0 0!important;
+  }
+
+.buy-form {
+    border: none!important;
+  }
+  &__price--ja{
+    margin: 8px 0 0;
+    line-height: 1.5;
+    font-size: 28px;
+    .item-shipping-fee {
+      margin: 0 0 0 8px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  &__accordion.not-have {
+    background: #ccc;
+    .buy-item__accordion--child {
+      cursor: default;
+    }
+  }
+  &__accordion {
+    margin: 16px 0 0;
+    &--child {
+      padding: 16px;
+      border: 1px solid $border;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+}
+
+.buy-user__info {
+  h3:first-child {
+    margin: 0;
+  }
+  h3 {
+    margin: 40px 0 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  address {
+    display: block;
+    font-style: normal;
+  }
+  &--text {
+    margin: 8px 0 0;
+    line-height: 1.4;
+    text-align: left;
+    font-size: 14px;
+    &--fix {
+      display: block;
+      text-align: right;
+    }
+  }
+  .fas.fa-chevron-right {
+    margin: 0 0 0 8px;
+    font-size: 11px;
+    color: $blue;
+  }
+}

@@ -1,0 +1,12 @@
+.hide {
+  display: none;
+}
+.fail-comment{
+  list-style: none;
+  color: $red;
+  line-height: 1.5;
+  font-size: 14px;
+  li{
+    margin-top: 8px;
+  }
+}

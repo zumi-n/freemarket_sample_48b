@@ -9,73 +9,103 @@
         .container__inner
           %h2.single-head
             商品の情報を入力
-          = form_with do |f|
+          = form_with model: @item, id: 'sell-item' do |item|
             .upload-box
-              %h3.upload-box__head
-                出品画像
-                %span.form-require
-                  必須
-              %p
-                最大10枚までアップロードできます
-              .items-container.clearfix.state-image-number-10
-                =render partial: "upload"
+              = item.fields_for :images do |image|
+                %h3.upload-box__head
+                  出品画像
+                  %span.form-require
+                    必須
+                %p
+                  最大10枚までアップロードできます
+                = image.label :image, class: '' do
+                  = image.file_field :image, style: 'display: none;'
+                  .items-container.clearfix.state-image-number-10
+                    =render partial: "upload"
+                  %ul.hide.fail-comment#image-error
+                    %li 画像を入力してください
             .content
               .form-group
-                = f.label :name do
+                = item.label :name do
                   商品名
                   %span.form-require 必須
                 %div
-                  = f.text_field :name, class: 'input-default', placeholder: "商品名（必須 40文字まで)"
+                  = item.text_field :name, class: 'input-default', placeholder: "商品名（必須 40文字まで)"
+                %ul.hide.fail-comment#name-error
+                  %li 入力してください
               .form-group
-                = f.label :description do
+                = item.label :description do
                   商品の説明
                   %span.form-require 必須
-                = text_area :item, :description, class: 'textarea-default', size: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+                = item.text_area :description, class: 'textarea-default', size: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+                %ul.hide.fail-comment#description-error
+                  %li 入力してください
             .content.clearfix
               %h3.sub-head 商品の詳細
               .form-box
                 .form-group
-                  = f.label :category do
+                  = item.label :condition do
                     カテゴリー
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :name, [["レディース", "1"], ["メンズ", "2"], ["ベビー・キッズ","3"], ["インテリア・住まい・小物","4"], ["本・音楽・ゲーム","5"], ["おもちゃ・ホビー・グッズ","1328"], ["コスメ・香水・美容","6"], ["家電・スマホ・カメラ","7"], ["スポーツ・レジャー","8"], ["ハンドメイド","9"], ["チケット","1027"], ["自転車・オートバイ","1318"], ["その他", "10"]], {prompt: "---"}, {class: 'select-default'}
+                      = item.select :condition, [["レディース", "1"], ["メンズ", "2"], ["ベビー・キッズ","3"], ["インテリア・住まい・小物","4"], ["本・音楽・ゲーム","5"], ["おもちゃ・ホビー・グッズ","1328"], ["コスメ・香水・美容","6"], ["家電・スマホ・カメラ","7"], ["スポーツ・レジャー","8"], ["ハンドメイド","9"], ["チケット","1027"], ["自転車・オートバイ","1318"], ["その他", "10"]], {prompt: "---"}, {class: 'select-default'}
                       %i.fas.fa-chevron-down.fa-lg
+                  %ul.hide.fail-comment#category-error
+                    %li 選択してください
                 .form-group
-                  = f.label :detail do
+                  = item.label :condition do
                     商品の詳細
                     %span.form-require 必須
                   .select-wrap
-                    = f.select :detail, [["新品・未使用", "1"], ["未使用に近い", "2"], ["目立った傷や汚れなし", "3"], ["やや傷や汚れあり", "4"], ["傷や汚れあり", "5"], ["全体的に状態が悪い", "6"],], {prompt: "---"}, {class: "select-default"}
+                    = item.select :condition, [["新品・未使用", "1"], ["未使用に近い", "2"], ["目立った傷や汚れなし", "3"], ["やや傷や汚れあり", "4"], ["傷や汚れあり", "5"], ["全体的に状態が悪い", "6"],], {prompt: "---"}, {class: "select-default"}
                     %i.fas.fa-chevron-down.fa-lg
+                  %ul.hide.fail-comment#condition-error
+                    %li 選択してください
             .content.clearfix
-              %h3.sub-head 配送について
-              = link_to "/jp/help_center/article/68/", class: "form-question" do
-                %i.fas.fa-question-circle
-              .form-box
-                .form-group
-                  = f.label :deliveryFee do
-                    配送料の負担
-                    %span.form-require 必須
-                  %div
+              = item.fields_for :delivery do |deli|
+                %h3.sub-head 配送について
+                = link_to "/jp/help_center/article/68/", class: "form-question" do
+                  %i.fas.fa-question-circle
+                .form-box
+                  .form-group
+                    = deli.label :deliveryFee do
+                      配送料の負担
+                      %span.form-require 必須
+                    %div
+                      .select-wrap
+                        = deli.select :burden, [["送料込み(出品者負担)", "2"], ["着払い(購入者負担)", "1"]], {prompt: "---"}, {class: 'select-default'}
+                        %i.fas.fa-chevron-down.fa-lg
+                    %ul.hide.fail-comment#payer-error
+                      %li 選択してください
+                  .form-group
+                    = deli.label :method do
+                      配送の方法
+                      %span.form-require 必須
+                    %div
+                      .select-wrap
+                        = deli.select :method, [["未定", "0"], ["らくらくメルカリ便", "1"], ["ゆうメール", "3"], ["レターパック", "4"], ["普通郵便(定型、定形外)", "5"], ["クロネコヤマト", "6"], ["ゆうパック", "7"], ["クリックポスト", "8"], ["ゆうパケット", "9"]], {prompt: "---"}, {class: 'select-default'}
+                        %i.fas.fa-chevron-down.fa-lg
+                      %ul.hide.fail-comment#method-error
+                        %li 選択してください
+                  .form-group
+                    = deli.label :deriveryFrom do
+                      発送元の地域
+                      %span.form-require 必須
                     .select-wrap
-                      = f.select :payer, [["送料込み(出品者負担)", "2"], ["着払い(購入者負担)", "1"]], {prompt: "---"}, {class: 'select-default'}
+                      = deli.collection_select :area, Prefecture.all, :id, :name, {prompt: "---"}, {class: 'select-default'}
                       %i.fas.fa-chevron-down.fa-lg
-                .form-group
-                  = f.label :deriveryFrom do
-                    発送元の地域
-                    %span.form-require 必須
-                  .select-wrap
-                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: 'select-default'}
-                    %i.fas.fa-chevron-down.fa-lg
-                .form-group
-                  = f.label :deriveryDays do
-                    発送までの日数
-                    %span.form-require 必須
-                  .select-wrap
-                    = f.select :days, [["1~2日で発送", "1"], ["2~3日で発送", "2"], ["4~7日で発送", "3"]], {prompt: "---"}, {class: 'select-default'}
-                    %i.fas.fa-chevron-down.fa-lg
+                    %ul.hide.fail-comment#area-error
+                      %li 選択してください
+                  .form-group
+                    = deli.label :deriveryDays do
+                      発送までの日数
+                      %span.form-require 必須
+                    .select-wrap
+                      = deli.select :date, [["1~2日で発送", "1"], ["2~3日で発送", "2"], ["4~7日で発送", "3"]], {prompt: "---"}, {class: 'select-default'}
+                      %i.fas.fa-chevron-down.fa-lg
+                    %ul.hide.fail-comment#date-error
+                      %li 選択してください
             .content.clearfix
               %h3.sub-head 販売価格(300〜9,999,999)
               = link_to "/jp/help_center/article/64/", class: "form-question" do
@@ -84,13 +114,15 @@
                 %ul.price
                   %li.form-group
                     .clearfix
-                      = f.label :price, class: "l-left" do
+                      = item.label :price, class: "l-left" do
                         価格
                         %span.form-require 必須
                       .l-right.price-input
                         ¥
                         .price-input__container
-                          = f.text_field :price, class: 'input-default', placeholder: "例）300"
+                          = item.text_field :price, class: 'input-default', placeholder: "例）300"
+                    #price-error.fail-comment.hide
+                      300以上9999999以下で入力してください
                   %li.clearfix
                     .l-left 販売手数料 (10%)
                     .l-right -
@@ -114,7 +146,7 @@
                   また、出品をもちまして
                   = link_to '加盟店規約', '/jp/seller_terms/'
                   に同意したことになります。
-              = f.submit "出品する", {class: "btn-box__default btn-box--red"}
+              = item.submit "出品する", {class: "btn-box__default btn-box--red"}
               .btn-box__default.btn-box--gray もどる
           .overlay
   = render 'form-footer'

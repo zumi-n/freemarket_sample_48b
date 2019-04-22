@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -81,3 +82,5 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'font-awesome-sass'
 gem 'active_hash'
+gem 'jquery-rails'
+gem 'carrierwave'

@@ -1,2 +1,17 @@
 %aside.app-banner
-  = image_tag 'app-banner-ss.png', class: "app-banner"
+  .app-banner__content
+    .app-banner__content__inner
+      %h2 スマホでかんたんフリマアプリ
+      %p 今すぐ無料ダウンロード！
+      .app-banner__content__inner--icon
+        %figure
+          = image_tag 'mercari_icon.png', alt: 'icon', width: '68', class: 'mercari-logo'
+        %ul.clearfix
+          %li
+            = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+              = image_tag 'app-store_logo.svg', alt: 'app-store', height: '40', width: '133'
+          %li
+            = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+              = image_tag 'google-play_logo.svg', alt: 'app-store', height: '40', width: '133'
+    %figure.app-banner__content--image
+      = image_tag 'sp_image', alt: 'icon'

@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :item do
-    user { nil }
-    name { "MyString" }
-    description { "MyText" }
+    user
+    name { Faker::Name.name }
+    description { Faker::Lorem.sentence }
     brand { "MyString" }
     size { "MyString" }
     condition { "MyString" }
-    price { "MyString" }
+    price { Faker::Commerce.price }
     profit { "MyString" }
   end
 end

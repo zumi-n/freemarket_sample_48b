@@ -78,13 +78,13 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false , foreign_key: true|
+|category_id|references|null: false , foreign_key: true|
 |name|string|index: true , null: false|
 |description|text||
 |brand|string|
 |size|string||
 |condition|string|null: false|
 |price|integer|null: false|
-|profit|integer|null: false|
 
 ### Association
 - belongs_to :user
@@ -98,7 +98,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false , foreign_key: true|
-|burden|string|null: false|
+|payer|string|null: false|
 |method|string|null: false|
 |area|string|null: false|
 |date|string|
@@ -111,7 +111,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false , foreign_key: true|
-|image|string|null: false|
+|file|string|null: false|
 
 ### Association
 - belongs_to :item

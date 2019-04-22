@@ -5,24 +5,7 @@
     = image_tag 'carousel/banner-bokurano-heisei.jpg'
   .main-box
     %h2 ピックアップカテゴリー
-
-    %section.main-box__items
-      %h3
-        =link_to "レディース 新着アイテム", "#"
-
-      .main-box__items__row
-        =render partial:'shared/item', locals: { items: @items }
-
-  .main-box
-    %h2 ピックアップブランド
-
-    %section.main-box__items
-
-      %h3
-        =link_to "シャネル新着アイテム", "#"
-
-      .main-box__items__row-brand
-        =render partial:'shared/item', locals: { items: @items }
+    = render partial:'shared/item', locals: { items: @items }
 
   =render "shared/sell-btn"
 

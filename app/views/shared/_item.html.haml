@@ -1,8 +1,6 @@
-.main-box__items__row--item-box
-  =link_to '#' do
-    = image_tag 'item_sample.jpg'
-    .main-box__items__row--item-box--body
-      %h4 ニコちゃんロングTシャツ 100
-      .main-box__items__row--item-box--body--price
-        ¥ 100
-        %p (税込)
+%section.main-box__items
+  %h3
+    =link_to "レディース 新着アイテム", "#"
+
+  .main-box__items__row
+    = render partial: 'shared/item-content', collection: items, as: 'item'

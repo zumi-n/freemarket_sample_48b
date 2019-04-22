@@ -1,30 +1,42 @@
 .wrapper
   =render "shared/header"
+  %main.white
+    .swiper-container.top-carousel
+      .swiper-wrapper
+        .swiper-slide
+          = image_tag 'carousel/banner-bokurano-heisei.jpg', alt: 'swipe01'
+        .swiper-slide
+          = image_tag 'carousel/banner-natsukashi.jpg', alt: 'swipe02'
+        .swiper-slide
+          = image_tag 'carousel/banner-new-life.jpg', alt: 'swipe03'
+      .swiper-button-prev.swiper-button-custome
+        %i.fas.fa-angle-double-left
+      .swiper-button-next.swiper-button-custome
+        %i.fas.fa-angle-double-right
+      .swiper-pagination
+    .main-box
+      %h2 出品中のアイテム
 
-  .owl-carousel
-    = image_tag 'carousel/banner-bokurano-heisei.jpg'
-  .main-box
-    %h2 出品中のアイテム
+      %section.main-box__items
+        %h3
+          =link_to "新着アイテム", "#"
 
-    %section.main-box__items
-      %h3
-        =link_to "新着アイテム", "#"
+        .main-box__items__row
+          =render "shared/item"
+          =render "shared/item"
+          =render "shared/item"
+          =render "shared/item"
 
-      .main-box__items__row
-        =render "shared/item"
-        =render "shared/item"
-        =render "shared/item"
-        =render "shared/item"
-
-      .main-box__items__row
-        =render "shared/item"
-        =render "shared/item"
-        =render "shared/item"
-        =render "shared/item"
-
+        .main-box__items__row
+          =render "shared/item"
+          =render "shared/item"
+          =render "shared/item"
+          =render "shared/item"
 
   =render "shared/sell-btn"
 
   =render "shared/app-banner"
 
   =render "shared/footer"
+
+= javascript_include_tag "swiper", "carousel"

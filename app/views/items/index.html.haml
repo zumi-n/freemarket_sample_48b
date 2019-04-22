@@ -5,7 +5,7 @@
     = image_tag 'carousel/banner-bokurano-heisei.jpg'
   .main-box
     %h2 ピックアップカテゴリー
-    = render partial:'shared/item', locals: { items: @items }
+    = render 'shared/item', items: @items
 
   =render "shared/sell-btn"
 

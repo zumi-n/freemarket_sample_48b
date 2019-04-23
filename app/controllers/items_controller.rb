@@ -8,9 +8,13 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @profile = Profile.find(params[:id])
+    @delivery = Delivery.find(params[:id])
   end
 
   def confirm
+    @item = Item.find(params[:id])
   end
 
 end

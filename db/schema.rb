@@ -206,5 +206,5 @@ ActiveRecord::Schema.define(version: 2019_04_23_055454) do
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
   add_foreign_key "profiles", "users"
-  add_foreign_key "sns_credentials", "_users", column: "user_id"
+  add_foreign_key "sns_credentials", "users"
 end

@@ -82,3 +82,4 @@ gem 'omniauth-google-oauth2'
 gem 'font-awesome-sass'
 gem 'active_hash'
 gem 'ancestry'
+gem 'recaptcha', require: "recaptcha/rails"

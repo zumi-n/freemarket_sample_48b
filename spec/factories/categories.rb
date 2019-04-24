@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :category do
-    item
-    item_id { 1 }
-    ancestry { "シャネル" }
+    id       { 1 }
+    item_id  { 1 }
+    ancestry { 1 }
   end
 end

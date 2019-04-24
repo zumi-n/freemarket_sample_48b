@@ -1,14 +1,27 @@
 .wrapper
   =render "shared/header"
+  %main.white
+    .swiper-container.top-carousel
+      .swiper-wrapper
+        .swiper-slide
+          = image_tag 'carousel/banner-bokurano-heisei.jpg', alt: 'swipe01'
+        .swiper-slide
+          = image_tag 'carousel/banner-natsukashi.jpg', alt: 'swipe02'
+        .swiper-slide
+          = image_tag 'carousel/banner-new-life.jpg', alt: 'swipe03'
+      .swiper-button-prev.swiper-button-custome
+        %i.fas.fa-angle-double-left
+      .swiper-button-next.swiper-button-custome
+        %i.fas.fa-angle-double-right
+      .swiper-pagination
+    .main-box
+      %h2 ピックアップカテゴリー
+      = render 'shared/item', items: @items
 
-  .owl-carousel
-    = image_tag 'carousel/banner-bokurano-heisei.jpg'
-  .main-box
-    %h2 ピックアップカテゴリー
-    = render 'shared/item', items: @items
+    =render "shared/sell-btn"
 
-  =render "shared/sell-btn"
+    =render "shared/app-banner"
 
-  =render "shared/app-banner"
+    =render "shared/footer"
 
-  =render "shared/footer"
+= javascript_include_tag "swiper", "carousel"

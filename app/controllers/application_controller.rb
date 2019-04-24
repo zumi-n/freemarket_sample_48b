@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
     def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:family_name,:first_name,:family_name_kana,:first_name_kana,:birthday_year,:birthday_month,:birthday_day,:user_id])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:family_name,:first_name,:family_name_kana,:first_name_kana,:birthday_data,:user_id])
   end
   def delete_user
     @registrations = User.find(current_user.id)

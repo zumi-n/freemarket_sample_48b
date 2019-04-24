@@ -23,7 +23,7 @@
       %h2.single-main-container__head 会員情報入力
       .single-main-container__inner
         .single-main-container__inner--content
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
           .ur-form-group
             = f.label :ニックネーム , class: "ur-form-group__label"
             %span.ur-form-group__span 必須
@@ -89,16 +89,7 @@
             %span.ur-form-group__span 必須
             .ur-form-group-birthday__year
               .ur-form-group-birthday__wrap
-                = f.select :birthday_year, options_for_select(1900..2019),{},{class: "select__default"}
-                = f.label :"年" ,class: "ur-form-group-birthday__labels"
-            .ur-form-group-birthday__month
-              .ur-form-group-birthday__wrap
-                = f.select :birthday_month, options_for_select(1..12),{},{class: "select__default"}
-                = f.label :"月" ,class: "ur-form-group-birthday__labels"
-            .ur-form-group-birthday__day
-              .ur-form-group-birthday__wrap
-                = f.select :birthday_day, options_for_select(1..31),{},{class: "select__default"}
-                = f.label :"日" ,class: "ur-form-group-birthday__labels"
+                = f.date_select(:birthday_data, {use_month_numbers: true, start_year: 1900, end_year: (Time.now.year), prompt: "---"}, {class: "select__default"})
             %p.ur-form-group-info-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
             /= recaptcha_tags
             .ur-form-group#termsofservice

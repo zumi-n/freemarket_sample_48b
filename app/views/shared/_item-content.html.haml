@@ -1,6 +1,6 @@
 .main-box__items__row--item-box
 =link_to item_path(item.id), method: :get do
-  = image_tag((item.images.first.file), width: '213', height: '213') if item.images.present?
+  = image_tag((item.images[0].file.first.url), width: '213', height: '213') if item.images.present?
   .main-box__items__row--item-box--body
     %h4
     = item.name

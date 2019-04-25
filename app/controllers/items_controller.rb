@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
 
 
   def show
-    @profile = Profile.find(params[:id])
+    # @profile = Profile.find(params[:id])
     @delivery = Delivery.find(params[:id])
   end
 

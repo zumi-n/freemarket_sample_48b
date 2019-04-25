@@ -10,7 +10,7 @@
       %section.buy-content.buy-item
         .buy-content__inner
           %h3.buy-item__image
-            = image_tag "#{@item.images.first.file}"
+            = image_tag "#{@item.images[0].file.first.url}"
           %p.buy-item__name.bold
             = @item.name
           = form_with class: "buy-form" do |f|

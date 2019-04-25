@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :profile do
-    user { nil }
+    user         { Faker::Name.name }
     introduction { "MyText" }
-    image { "MyString" }
-    nickname { "MyString" }
+    image        { "MyString" }
+    nickname     { "MyString" }
   end
 end

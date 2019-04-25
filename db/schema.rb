@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(version: 2019_04_23_055454) do
     t.string "size"
     t.string "condition", null: false
     t.string "price", null: false
-    t.string "profit", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"

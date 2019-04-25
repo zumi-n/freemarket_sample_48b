@@ -28,7 +28,7 @@
             %span.charge-errors
             %label.creditcard カード番号
             %span.ur-form-group__span 必須
-            %input.number.ur-form-group__field{maxlength: "16", name: "number", placeholder: "カード番号", type: "text", value: 4242424242424242,id: "payment_card_no"}/
+            %input.number.ur-form-group__field{maxlength: "16", name: "number", placeholder: "カード番号", type: "text", value: "",id: "payment_card_no"}/
             /=image_tag "credit.png", size:"350x30"
           .ur-form-group
             %label.creditcard 有効期限
@@ -36,6 +36,7 @@
             .ur-form-group-birthday__year
               .ur-form-group-birthday__wrap
                 %select{name: 'exp_month', class: 'registration-form__expiration-date--month-form', id: 'payment_card_expire_mm'}
+                  %option{value:  "00"} --
                   %option{value:  "01"} 01
                   %option{value:  "02"} 02
                   %option{value:  "03"} 03
@@ -51,6 +52,7 @@
                 %span.ur-form-group-birthday__labels 月
               .ur-form-group-birthday__wrap
                 %select{name: 'exp_year', class: 'registration-form__expiration-date--year-form', id: 'payment_card_expire_yy'}
+                  %option{value:  "00"} --
                   %option{:value => "2019"} 19
                   %option{:value => "2020"} 20
                   %option{:value => "2021"} 21

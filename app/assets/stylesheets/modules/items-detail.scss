@@ -27,30 +27,14 @@
     }
     .image-low{
       display: flex;
+      .image-small img{
+        filter: opacity(50%);
+      }
+      .image-small img:hover{
+        filter: initial;
+      }
     }
   }
-}
-
-.triangle::before {
-  content: "";
-  top: 0;
-  left: 0;
-  border-bottom: 7em solid transparent;
-  border-left: 7em solid #ea352d; /* ラベルの色はここで変更 */
-  position: absolute;
-  z-index: 0;
-}
-.triangle::after {
-  content: "SOLD";
-  display: block;
-  top: 20px;
-  transform: rotate(-45deg);
-  color: #fff; /* 文字色はここで変更 */
-  left: 0;
-  position: absolute;
-  z-index: 1;
-  font-size: 28px;
-  font-weight: bold;
 }
 
 .item-main-content__detail-table{
@@ -99,7 +83,7 @@
 
 .item-detail-price{
   display: flex;
-  margin-top: 40px;
+  margin-top: 80px;
   padding-left: 200px;
   &--inclued-tax{
     font-size: 50px;
@@ -118,7 +102,7 @@
 }
 
 .item-buy__btn{
-  background-color: #888888;
+  background-color: #ea352d;
   height: 60px;
   margin-top: 16px;
   border: none;
@@ -312,7 +296,7 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    .facebook-square{
+    .facebook-square-box{
       width: 44px;
       height: 44px;
       background-color: #385185;
@@ -323,30 +307,30 @@
         font-size: 1.9em;
         color: white;
         line-height: 44px;
-        margin-left: 8px;
+        margin-left: 10px;
       }
     }
-    .twitter-square{
+    .twitter-square-box{
       width: 44px;
       height: 44px;
       border-radius: 4px;
       margin-right: 8px;
       .fab.fa-twitter-square{
-        font-size: 3.2em;
+        font-size: 3.6em;
         color: #5D9Dc9;
       }
     }
-    .pinterest-square{
+    .pinterest-square-box{
       width: 44px;
       height: 44px;
       background-color: #AA262A;
       border-radius: 4px;
       margin-top: 3px;
       .fab.fa-pinterest-square{
-        font-size: 1.3em;
+        font-size: 1.8em;
         border-radius: 50%;
         color: white;
-        margin-left: 12px;
+        margin-left: 11px;
         line-height: 44px;
       }
     }
@@ -374,7 +358,7 @@
       }
       &__userselling-item-box{
         width: 220px;
-        height: 330px;
+        height: 345px;
         margin-right: 17px;
         background-color: white;
         &--body{
@@ -401,6 +385,7 @@
             p{
               font-size: 10px;
               color: #333333;
+              text-align: left;
             }
           }
         }

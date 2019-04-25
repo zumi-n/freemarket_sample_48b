@@ -1,0 +1,20 @@
+.common-breadcrumbs{
+  height: 49px;
+  border-top: 0.1px solid #eee;
+  background-color: #FFFFFF;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  position: relative;
+}
+
+
+.breadcrumbs{
+  width: 1020px;
+  margin: 0 auto;
+  padding: 16px 0;
+  a{
+    color: #333333;
+  }
+  span{
+    font-weight: bold;
+  }
+}

@@ -15,12 +15,16 @@ class ItemsController < ApplicationController
   end
 
 
+  before_action :set_item, only: [:show, :confirm]
+
   def index
     @items = Item.includes(:images).sample(4)
   end
 
 
   def show
+    @profile = Profile.find(params[:id])
+    @delivery = Delivery.find(params[:id])
   end
 
   def confirm
@@ -31,6 +35,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :description, :brand, :size, :condition, :price, :category_id_id, images_attributes:[:item_id, {file: []}], delivery_attributes:[:payer, :method, :area, :date]).merge(user_id: 1)
+
+  def set_item
+    @item = Item.find(params[:id])
+
   end
 
 end

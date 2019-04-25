@@ -31,7 +31,7 @@ $(function(){
     } else {
       $('#description-error').addClass("hide");
     }
-    if ( $('#item_category_id_id').val().length == 0 ){
+    if ( $('#item_category_id').val().length == 0 ){
       $('#category-error').removeClass("hide");
     } else {
       $('#category-error').addClass("hide");

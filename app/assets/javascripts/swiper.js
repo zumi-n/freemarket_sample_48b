@@ -8123,7 +8123,7 @@
 
 }));
 
-
+// carousel.jsから移植（読み込みタイミングのせいでエラー発生してたので苦肉の策）
 var mySwiper = new Swiper('.swiper-container', {
   autoHeight: true,
   loop: true,

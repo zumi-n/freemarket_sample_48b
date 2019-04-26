@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         #sessions: 'users/sessions'
       }
   root 'items#index'
-  resources :items, only: [:index, :show, :new] do
+  resources :items, only: [:index, :show, :new, :create] do
     get :confirm, on: :member
   end
   #get "users/sign_up/registration", to: "users#new"

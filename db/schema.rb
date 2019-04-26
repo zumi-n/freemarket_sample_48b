@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_055454) do
+ActiveRecord::Schema.define(version: 2019_04_26_061110) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(version: 2019_04_23_055454) do
     t.string "size"
     t.string "condition", null: false
     t.string "price", null: false
-    t.string "profit", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"

@@ -9,18 +9,18 @@
     .item-main-content
       .item-main-content__images
         .image-main
-          = image_tag("#{@item.images.first.file}", width: '300', height: '300')
+          = image_tag("#{@item.images[0].file[0].url}", width: '300', height: '300')
         .image-low
           .image-small
-            - @item.images.each do |image|
-              = image_tag("#{image.file}", width: '75', height: '75', class:'small-image')
+            - @item.images[0].file.each do |file|
+              = image_tag("#{file.url}", width: '75', height: '75', class:'small-image')
 
       %table.item-main-content__detail-table
         %tr
           %th 出品者
           %td
             =link_to "#" do
-              %p=@profile.nickname
+              %p あざおさん
             .rating
               .rating-good
                 %i.fas.fa-grin
@@ -159,7 +159,7 @@
   .items-user-box
     %section.items-user-box__items
       %h4
-        =link_to "#{@profile.nickname}"+"さんのその他の出品", "#"
+        =link_to "あざお"+"さんのその他の出品", "#"
 
       .items-user-box__items__row
         .items-user-box__items__row__userselling-item-box
@@ -231,4 +231,3 @@
   =render "shared/app-banner"
 
   =render "shared/footer"
-  

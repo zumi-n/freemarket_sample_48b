@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-        registrations: 'users/registrations'
-        #,
-        #omniauth_callbacks: 'users/omniauth_callbacks',
-        #sessions: 'users/sessions'
+        registrations: 'users/registrations',
+        omniauth_callbacks: 'users/omniauth_callbacks',
+        sessions: 'users/sessions'
       }
   root 'items#index'
   resources :items, only: [:index, :show, :new, :create] do

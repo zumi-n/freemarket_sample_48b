@@ -10,10 +10,10 @@
             %span メールアドレスで登録
             %i.far.fa-envelope
 
-          = link_to '#' ,class: 'btn-default btn-sns-facebook' do
+          = link_to user_facebook_omniauth_authorize_path ,class: 'btn-default btn-sns-facebook' do
             %strong Facebookで登録
 
-          = link_to '#', class: "btn-default btn-sns-google" do
+          = link_to user_google_oauth2_omniauth_authorize_path, class: "btn-default btn-sns-google" do
             = image_tag(("google icon.jpg"), class: "goole-icon")
             %em Googleで登録
 

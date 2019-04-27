@@ -29,21 +29,12 @@ ActiveRecord::Schema.define(version: 2019_04_26_061110) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "token", null: false
-    t.integer "expiration_year", null: false
-    t.integer "expiration_month", null: false
-    t.integer "security_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
@@ -132,5 +123,4 @@ ActiveRecord::Schema.define(version: 2019_04_26_061110) do
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
   add_foreign_key "profiles", "users"
-
 end

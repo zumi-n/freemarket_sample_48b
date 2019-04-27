@@ -10,10 +10,10 @@
       %section.buy-content.buy-item
         .buy-content__inner
           %h3.buy-item__image
-            = image_tag 'list_item_example1.jpg'
+            = image_tag "#{@item.images[0].file.first.url}"
           %p.buy-item__name.bold
-            美品！限定ピカチュウぬいぐるみ 値下げ有り！
-          = form_with url: cards_pay_path, class: "buy-form" do |f|
+            = @item.name
+          = form_with class: "buy-form" do |f|
             %p.buy-item__price--ja.bold
               = "¥#{@item.price}"
               %span.item-shipping-fee.f14.bold 送料込み

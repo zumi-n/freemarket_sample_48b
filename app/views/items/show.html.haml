@@ -1,31 +1,26 @@
 .wrapper
   =render "shared/header"
+  =render 'shared/item-detail-breadcrumbs'
 
   .items-box-container
     .item-name
-      %h1ニコちゃんロングTシャツ
+      %h1= @item.name
 
     .item-main-content
       .item-main-content__images
         .image-main
-          = image_tag('item_sample.jpg', width: '300', height: '300')
+          = image_tag("#{@item.images[0].file[0].url}", width: '300', height: '300')
         .image-low
           .image-small
-            = image_tag('item_sample.jpg', width: '75', height: '75')
-          .image-small
-            = image_tag('item_sample.jpg', width: '75', height: '75')
-          .image-small
-            = image_tag('item_sample.jpg', width: '75', height: '75')
-          .image-small
-            = image_tag('item_sample.jpg', width: '75', height: '75')
-        .triangle
+            - @item.images[0].file.each do |file|
+              = image_tag("#{file.url}", width: '75', height: '75', class:'small-image')
 
       %table.item-main-content__detail-table
         %tr
           %th 出品者
           %td
-            =link_to '#' do
-              %p あざお
+            =link_to "#" do
+              %p あざおさん
             .rating
               .rating-good
                 %i.fas.fa-grin
@@ -51,98 +46,44 @@
           %th ブランド
           %td
             =link_to '#' do
-              %p シャネル
+              %p=@item.brand
+        %tr
+          %th サイズ
+          %td=@item.size
         %tr
           %th 商品の状態
-          %td 非常に良い
+          %td=@item.condition
         %tr
           %th 配送料の負担
-          %td 送料込み(出品者負担)
+          %td=@delivery.payer
         %tr
           %th 配送の方法
-          %td らくらくメルカリ便
+          %td=@delivery.method
         %tr
           %th 配送元地域
           %td
             =link_to '#' do
-              %p 奈良県
+              %p=@delivery.area
         %tr
           %th 発送日の目安
-          %td 1~2日で発送
+          %td=@delivery.date
 
 
     .item-detail-price
       %span.item-detail-price--inclued-tax
-        ¥100
+        ¥
+        = @item.price
       %span.item-detail-price--tax
         (税込)
       %span.item-detail-price--postage
         送料込み
 
     .item-buy__btn
-      = link_to '#', class: 'buy-btn' do
-        %p 売り切れました
+      = link_to confirm_item_path(params[:id]), class: 'buy-btn' do
+        %p 購入画面に進む
 
     .item-detail-description
-      %p
-        ■商品ご覧頂き、誠にありがとうございます。
-        %br
-        ※今だけ、フォロワーになって下さった方に、300円のお値引きサービス中！！
-        %br
-        %br
-        私の商品検索は、
-        Boon・バッグ　
-        検索してください。
-        %br
-        %br
-        質問がありましたらコメントでよろしくお願いします！
-        ■ 商品説明 ■
-        まずはプロフを確認してください☆
-        %br
-        %br
-        ■ 商品詳細 ■
-        シンプルな落ち着いたお色味でどんな場面にも合い、
-        どんな服にも合わせやすいお鞄です。使用感有！角擦れはございませんが
-        多少の汚れはあります。内側はとても綺麗です☆
-        使わなくなったのでどなたか使っていただける方お願いします。
-        製造番号　H2K-9294
-        %br
-        %br
-        【ブランド】
-        シャネル
-        %br
-        %br
-        【商品名】
-        シャネル ロングTシャツ
-        %br
-        %br
-        【仕様】
-        ロングTシャツ
-        %br
-        %br
-        【サイズ】
-        %br
-        縦：32
-        %br
-        横：31
-        %br
-        幅：7
-        %br
-        紐：130 多少調節可能
-        %br
-        %br
-        ＊他にも数多くの商品を出品しているので、ぜひご覧ください。
-        %br
-        ＊複数購入、お取り置き(５日まで)もできるので、お気軽にお声がけくださいませ。
-        %br
-        ＊中古品になりますので、予めご理解いただきますよう、お願い致します^_^
-        %br
-        ※自宅保管、素人検品、素人寸法の誤差などにご理解がない方、神経質な方、完璧な物が欲しい方は購入お控えください。
-        %br
-        、お願い致します^_^
-        %br
-        ※自宅保管、素人検品、素人寸法の誤差などにご理解がない方、神経質な方、完璧な物が欲しい方は購入お控えください。
-        %br
+      %p= @item.description
 
     .item-button-container
       .item-button-container-left
@@ -180,34 +121,13 @@
             %i.far.fa-clock
             %span 1日前
 
-    .items-detail-message__body.clearfix
-      .items-message-content
-      = image_tag('user-icon.svg', class: 'user-face', width: '40', height: '40')
-      .chatting
-        .says
-          %p こんにちわ
-          .time
-            %i.far.fa-clock
-            %span 1日前
-
-    .items-detail-message__body.clearfix
-      .items-message-content
-      = image_tag('user-icon.svg', class: 'user-face', width: '40', height: '40')
-      .chatting
-        .says
-          %p こんにちわ
-          .time
-            %i.far.fa-clock
-            %span 1日前
-
-
     .items-message-content
       %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
       = form_with do |f|
         = f.text_area :comment, type: 'input', class: 'message-content'
       .items-message-content__btn
         = link_to '#', class: 'messege-btn' do
-          %span 売り切れのためコメントできません。
+          %span コメントする
 
   %ul.nav-item-link
     %li.nav-item-link__prev
@@ -221,15 +141,15 @@
 
   .item-social-mediabox
     %ul.social-mediabox
-      .facebook-square
+      .facebook-square-box
         %li
           = link_to '#', class: 'facebook-icon' do
             %i.fab.fa-facebook-square
-      .twitter-square
+      .twitter-square-box
         %li
           = link_to '#', class: 'twitter-icon' do
             %i.fab.fa-twitter-square
-      %li.pinterest-square
+      %li.pinterest-square-box
         = link_to '#', class: 'pinterest-icon' do
           %i.fab.fa-pinterest-square
 
@@ -239,7 +159,7 @@
   .items-user-box
     %section.items-user-box__items
       %h4
-        =link_to "あざおさんのその他の出品", "#"
+        =link_to "あざお"+"さんのその他の出品", "#"
 
       .items-user-box__items__row
         .items-user-box__items__row__userselling-item-box
@@ -264,9 +184,9 @@
       .items-user-box__items__row
         .items-user-box__items__row__userselling-item-box
           =link_to '#' do
-            = image_tag 'item_sample.jpg', width: 220, height: 220
+            = image_tag 'list_item_example1.jpg', width: 220, height: 220
             .items-user-box__items__row__userselling-item-box--body
-              %h5 ニコちゃんロングTシャツ 100
+              %h5 ピカチュウ
               .items-user-box__items__row__userselling-item-box--body--price
                 ¥ 100
                 %p (税込)
@@ -274,7 +194,7 @@
   .items-user-box
     %section.items-user-box__items
       %h4
-        =link_to "シャネルのTシャツのその他の出品", "#"
+        =link_to "#{@item.brand}"+"のTシャツのその他の出品", "#"
 
       .items-user-box__items__row
         .items-user-box__items__row__userselling-item-box
@@ -299,9 +219,9 @@
       .items-user-box__items__row
         .items-user-box__items__row__userselling-item-box
           =link_to '#' do
-            = image_tag 'item_sample.jpg', width: 220, height: 220
+            = image_tag 'list_item_example1.jpg', width: 220, height: 220
             .items-user-box__items__row__userselling-item-box--body
-              %h5 ニコちゃんロングTシャツ 100
+              %h5 ピカチュウ 100
               .items-user-box__items__row__userselling-item-box--body--price
                 ¥ 100
                 %p (税込)
@@ -311,4 +231,3 @@
   =render "shared/app-banner"
 
   =render "shared/footer"
-  

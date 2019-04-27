@@ -8123,18 +8123,19 @@
 
 }));
 
+// carousel.jsから移植（読み込みタイミングのせいでエラー発生してたので苦肉の策）
 var mySwiper = new Swiper('.swiper-container', {
   autoHeight: true,
   loop: true,
   autoplay: {
-		delay: 3000,
-		stopOnLastSlide: false,
-		disableOnInteraction: false,
-		reverseDirection: false
-	},
+    delay: 3000,
+    stopOnLastSlide: false,
+    disableOnInteraction: false,
+    reverseDirection: false
+  },
   navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
   },
   pagination: {
     el: '.swiper-pagination',

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_034054) do
+ActiveRecord::Schema.define(version: 2019_04_26_061110) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 2019_04_22_034054) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,11 +93,10 @@ ActiveRecord::Schema.define(version: 2019_04_22_034054) do
     t.string "size"
     t.string "condition", null: false
     t.string "price", null: false
-    t.string "profit", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id_id"
-    t.index ["category_id_id"], name: "index_items_on_category_id_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["name"], name: "index_items_on_name"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -126,4 +132,5 @@ ActiveRecord::Schema.define(version: 2019_04_22_034054) do
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
   add_foreign_key "profiles", "users"
+
 end

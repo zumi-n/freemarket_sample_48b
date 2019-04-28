@@ -25,10 +25,8 @@ document.addEventListener(
           ); //取得したトークンを送信できる状態にします
           document.inputForm.submit();
           alert("登録が完了しました"); //確認用
-          // document.getElementById('card_token').innerHTML = response.card.id;
         } else {
           alert("カード情報が正しくありません。"); //確認用
-          document.getElementById('card_token').innerHTML = response.id;
         }
       });
     });

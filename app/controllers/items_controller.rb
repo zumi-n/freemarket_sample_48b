@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   end
 
 
-  before_action :set_item, only: [:show, :confirm]
+  before_action :set_item, only: [:show, :confirm, :purchase]
 
   def index
     @items = Item.includes(:images).sample(4)
@@ -28,7 +28,19 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @item = Item.find(params[:id])
+  end
+
+  require 'payjp'
+
+  def purchase
+    customer_id = Card.find(user_id: 2).first.customer_id
+    # TODO ログイン機能実装後反映
+    # customer = Card.find(user_id: current_user.id)
+    Payjp::Charge.create(
+      amount: @item.price,
+      customer: customer_id,
+      currency: 'jpy'
+    )
   end
 
 

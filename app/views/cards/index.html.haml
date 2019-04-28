@@ -17,7 +17,7 @@
           - if @card_information.present?
             %ul.content__credit-cards__list
               %li
-                = form_with url: cards_delete_path, id: 'charge-form', name: 'inputForm' do |f|
+                = form_with url: card_path(@card.id), id: 'charge-form', name: 'inputForm' do |f|
                   %figure
                     = image_tag "credit-cards/jcb.svg", size: "26×20", alt: @card_information.brand
                   .content__credit-cards__list--pay-num

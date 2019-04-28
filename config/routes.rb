@@ -7,11 +7,14 @@ Rails.application.routes.draw do
       }
   root 'items#index'
   resources :items, only: [:index, :show, :new, :create] do
-    get :confirm, on: :member
-    # post 'cards/pay', to: 'cards#pay'
+    member do
+      get :confirm
+      post :purchase
+    end
   end
-  resources :cards, only: [:index, :new, :destroy]
-  post 'cards/pay', to: 'cards#pay'
+
+  resources :cards, only: [:index, :new, :destroy, :create]
+
   #get "users/sign_up/registration", to: "users#new"
   resources :phonenumber
   resources :address

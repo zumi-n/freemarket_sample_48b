@@ -1,5 +1,4 @@
-const addCard = document.querySelector('#addCard');
-addCard.addEventListener(
+document.addEventListener(
   "DOMContentLoaded", (e) => {
     Payjp.setPublicKey("pk_test_5c749df69c612790371ab4d1");
     const btn = document.getElementById('token_submit'); //IDがtoken_submitの場合に取得される

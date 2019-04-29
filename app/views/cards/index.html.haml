@@ -19,7 +19,7 @@
               %li
                 = form_with url: card_path(@card.id), method: :delete, local: true, id: 'charge-form' do |f|
                   %figure
-                    = @card_brand
+                    - @card_brand
                     = image_tag "credit-cards/#{@card_src}", width: '26', height: '20', alt: @card_information.brand, id: "card_image"
                   .content__credit-cards__list--pay-num
                     = "**** **** **** " + @card_information.last4

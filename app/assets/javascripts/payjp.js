@@ -1,18 +1,19 @@
-document.addEventListener(
-  "DOMContentLoaded", e => {
+const addCard = document.querySelector('#addCard');
+addCard.addEventListener(
+  "DOMContentLoaded", (e) => {
     Payjp.setPublicKey("pk_test_5c749df69c612790371ab4d1");
-    let btn = document.getElementById("token_submit"); //IDがtoken_submitの場合に取得される
+    const btn = document.getElementById('token_submit'); //IDがtoken_submitの場合に取得される
     btn.addEventListener("click", (e) => {　//ボタンが押されたときに作動します
       e.preventDefault();　//ボタンを一旦無効化します
-      
+
       //カード情報生成
-      let card = {
+      const card = {
         number: document.getElementById("card_number").value,
         cvc: document.getElementById("cvc").value,
         exp_month: document.getElementById("exp_month").value,
         exp_year: document.getElementById("exp_year").value
       }; //入力されたデータを取得します。
-      
+
       //トークン生成
       Payjp.createToken(card, (status, response) => {
         if (status === 200) { //成功した場合

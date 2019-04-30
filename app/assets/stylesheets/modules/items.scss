@@ -145,9 +145,13 @@
 }
 
 .top-carousel {
+  width: 100%;
   height: 200px;
   position: relative;
   overflow: hidden;
+  .swiper-slide {
+    text-align: center;
+  }
   .swiper-button-custome {
     background-image: none !important;
     margin: 0 35px;
@@ -259,6 +263,7 @@
   height: 160px;
   color: #ffffff;
   text-align: center;
+  z-index: 9999;
   .white_color{
     color: #ffffff;
   }

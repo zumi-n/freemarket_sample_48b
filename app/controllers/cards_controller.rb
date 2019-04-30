@@ -8,19 +8,22 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_information = customer.cards.retrieve(@card.card_id)
       @card_brand = @card_information.brand
-      if @card_brand == "Visa"
+
+      case @card_brand
+      when "Visa"
         @card_src = "visa.svg"
-      elsif @card_brand == "JCB"
+      when "JCB"
         @card_src = "jcb.svg"
-      elsif @card_brand == "MasterCard"
+      when "MasterCard"
         @card_src = "master-card.svg"
-      elsif @card_brand == "American Express"
+      when "American Express"
         @card_src = "american_express.svg"
-      elsif @card_brand == "Diners Club"
+      when "Diners Club"
         @card_src = "dinersclub.svg"
-      elsif @card_brand == "Discover"
+      when "Discover"
         @card_src = "discover.svg"
       end
+      
     end
   end
 

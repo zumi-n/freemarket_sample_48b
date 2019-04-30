@@ -1,0 +1,18 @@
+- parents.each do |parent|
+  %li.pc-header-nav-parent
+    %h6 #{parent.name}
+
+    %ul.pc-header-nav-children-wrap
+      - if parent.children.present?
+        - parent.children.each do |child|
+          %li.category-children
+            %h6 #{child.name}
+
+            %ul.pc-header-nav-grandchild-wrap
+              - if child.children.present?
+                - child.children.each do |grandchild|
+                  %li.category-children
+                    %h6 #{grandchild.name}
+
+
+

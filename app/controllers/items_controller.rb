@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:images).sample(4)
+    @parents = Category.all.order("id ASC").limit(14)
   end
 
 

@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  belongs_to :item, optional: true
+  has_many :items, dependent: :destroy
   has_ancestry
 end

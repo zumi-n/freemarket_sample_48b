@@ -1,5 +1,3 @@
-# Faker::Config.locale = :ja
-
 lady = Category.create( name: "レディース" )
 men = Category.create( name: "メンズ" )
 baby = Category.create( name: "べビー・キッズ" )

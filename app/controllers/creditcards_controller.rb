@@ -1,6 +1,6 @@
 class CreditcardsController < ApplicationController
   protect_from_forgery except:  [:create]
-  skip_before_action :delete_user
+  # skip_before_action :delete_user
   before_action :move_to_root,unless: :user_signed_in?
   def index
     Payjp.api_key = PAYJP_SECRET_KEY

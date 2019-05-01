@@ -1,4 +1,4 @@
-%header.pc-header
+%header.pc-header.visible-pc
   .pc-header__box
     .pc-header__box__top
       %h1.pc-header__box__top--logo
@@ -36,6 +36,34 @@
               %i.fa.fa-check.fa-lg
               %span やることリスト
           %li
-            = link_to '#', class: "pc-header__box__navi--user--list--link" do
+            = link_to profiles_path, class: "pc-header__box__navi--user--list--link" do
               %i.fa.fa-circle.fa-lg
               %span マイページ
+
+%header.sp-header.visible-sp
+  .sp-header__box
+    %h1.logo
+      = link_to root_path do
+        = image_tag "mercari_logo_color.svg", alt: 'mercari'
+    .sp-header__box__navi--user
+      = link_to '#', class: "sp-header__box__navi--user--link" do
+        %figure
+          %i.far.fa-bell.fa-lg
+      = link_to '#', class: "sp-header__box__navi--user--link" do
+        %figure
+          %i.fa.fa-check.fa-lg
+      = link_to profiles_path, class: "sp-header__box__navi--user--link" do
+        %figure
+          %i.fa.fa-circle.fa-lg
+  .sp-header__search-bar
+    = form_with url: '#', class: "sp-header__search-bar__form" do |form|
+      = form.text_field :search, placeholder: "何をお探しですか？", class: 'sp-search-box input-default'
+      = form.button type: 'submit', class: 'search-btn' do
+        %i.fa.fa-search
+  .sp-header__navi
+    = link_to '#', class: "sp-header__navi--category" do
+      %i.fa.fa-list-ul
+      %span カテゴリーから探す
+    = link_to '#', class: "sp-header__navi--brand" do
+      %i.fa.fa-tag
+      %span ブランドから探す

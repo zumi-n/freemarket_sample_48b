@@ -1,6 +1,9 @@
 class CardsController < ApplicationController
   require "payjp"
   before_action :set_card
+  before_action :set_parents, only: [:index, :new]
+  before_action :set_profile, only: [:index, :new]
+
 
   def index #CardのデータをPayjpに送って情報を取り出す
     if @card.present?
@@ -68,4 +71,18 @@ class CardsController < ApplicationController
   def set_card
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
+
+  def set_parents
+    @parents = Category.limit(14)
+  end
+
+  def set_profile
+    @profile = Profile.find_by(user_id: current_user.id)
+  end
 end
+
+
+
+
+
+

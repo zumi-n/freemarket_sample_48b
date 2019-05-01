@@ -19,6 +19,35 @@
     font-size: 16px;
     margin: 0 auto;
   }
+  &__list {
+    li {
+      padding: 24px 0;
+      border-bottom: 1px solid $border;
+      #charge-form {
+        position: relative;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+    &--pay-num {
+      margin: 8px 0 0;
+      font-size: 16px;
+    }
+    &__remove {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px 6px;
+      background: $white;
+      border-radius: 3px;
+      border: 1px solid $red;
+      color: $red;
+      cursor: pointer;
+    }
+  }
+
+
+
   &__add{
     padding: 24px 0;
     border-bottom: 1px solid #f5f5f5;

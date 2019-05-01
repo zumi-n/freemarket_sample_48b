@@ -10,12 +10,16 @@
           %i.fa.fa-search
     .pc-header__box__navi
       %navi.pc-header__box__navi--product
-        %ul
+        %ul.navi-icon
           %li
             %h2
               = link_to '#', class: "pc-header__box__navi--product--root list-parent" do
                 %i.fa.fa-list-ul
                 %span カテゴリーから探す
+
+            %ul.pc-header-nav-parent-wrap
+              = render 'shared/category-parents', parents: @parents
+
           %li
             %h2
               = link_to '#', class: "pc-header__box__navi--product--root list-parent" do

@@ -48,7 +48,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
-  gem 'faker'
+
   gem 'pry-rails'
 end
 
@@ -88,3 +88,4 @@ gem 'carrierwave'
 gem 'ancestry'
 gem 'payjp'
 gem 'gretel'
+gem 'faker'

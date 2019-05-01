@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :confirm, :purchase]
   before_action :set_card, only: [:confirm, :purchase]
+  before_action :set_parents, only: [:index, :show]
 
   def index
     @items = Item.includes(:images).sample(4)
@@ -20,7 +21,6 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-
 
   def show
     # @profile = Profile.find(params[:id])
@@ -78,6 +78,10 @@ class ItemsController < ApplicationController
 
   def set_card
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  end
+
+  def set_parents
+    @parents = Category.limit(14)
   end
 
   def move_to_create_card

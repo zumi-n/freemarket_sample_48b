@@ -23,7 +23,7 @@
           %i.fas.fa-chevron-right
 
       %li
-        = link_to '#', class: 'mypage-nav__list--item' do
+        = link_to new_item_path, class: 'mypage-nav__list--item' do
           出品する
           %i.fas.fa-chevron-right
 
@@ -88,7 +88,7 @@
 
     .setting-nav-head
       %h3 設定
-      = link_to '#', class: 'mypage-nav__list--item__profile' do
+      = link_to edit_profile_path(@profile.id), class: 'mypage-nav__list--item__profile' do
         プロフィール
 
         %i.fas.fa-chevron-right

@@ -1,32 +1,33 @@
+.visible-pc {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .visible-pc {
+    display: block;
+  }
+}
 .pc-header {
   position: relative;
   z-index: 1001;
   background-color: $white;
-@media screen and (min-width: 768px) {
-  .pc-header {
-    display: block;
-  }
-}
   &__box {
-    width: 1020px;
+    width: 700px;
     margin: 0 auto;
     padding: 8px 0 0;
-  @media screen and (max-width: 768px) {
-    .pc-header__box {
-      width: 700px;
-    }
-  }
     &__top {
-      height: 40px;
+      // height: 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      &--logo{
-        padding-top: 2px;
-        box-sizing: border-box;
+      &--logo a{
+        // padding-top: 2px;
+        // box-sizing: border-box;
+        display: block;
+        color: $main-font;
         img{
           width: 134px;
           height: 36px;
+          vertical-align: middle;
         }
       }
       &--search-box{
@@ -225,7 +226,13 @@
   position: relative;
   overflow: hidden;
   .swiper-slide {
+    height: 100vh;
+    width: 100vw;
     text-align: center;
+    img {
+      width: 100%;
+      object-fit: fill;
+    }
   }
   .swiper-button-custome {
     background-image: none !important;
@@ -377,20 +384,10 @@
         margin: 0;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
       }
-      @media screen and (min-width: 1068px) {
-        h2 {
-          font-size: 24px;
-        }
-      }
       p {
         color: $white;
         font-size: 24px;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      }
-      @media screen and (min-width: 1068px) {
-        p {
-          font-size: 35px;
-        }
       }
       &--icon {
         display: flex;
@@ -480,5 +477,17 @@
         font-size: 12px;
       }
     }
+  }
+}
+
+@media screen and (min-width: 1068px) {
+  .pc-header__box {
+    width: 1020px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 35px;
   }
 }

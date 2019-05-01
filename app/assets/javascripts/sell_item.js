@@ -30,6 +30,7 @@ $(function(){
   </li>`
 
         $('#image-list-before').before(preview);
+        change_drop_box_size();
 
       }
       reader.readAsDataURL(file);
@@ -37,16 +38,29 @@ $(function(){
 
   }
 
-  // function change_drop_box_size(){
-  //   if ($('#image-list').children().length === 0 || $('#image-list').children().length === 5){
-  //     $('#image-drop-box').addClass('drop-box-size-zero-or-five')
-  //   } else if ($('#image-list').children().length === 1 || $('#image-list').children().length === 6){
-  //     $('#image-drop-box').addClass('drop-box-size-one-or-six')
-  //   } else if ($('#image-list').children().length === 2 || $('#image-list').children().length === 7){
-
-  //   }
-
-  // }
+  function change_drop_box_size(){
+    var preview_num = $('#image-list').children().length - 1;
+    if (preview_num === 0 || preview_num === 5){
+      $('#image-list-before').css('width','620');
+      $('#image-list-before').removeClass("hide");
+    } else if (preview_num === 1 || preview_num === 6){
+      $('#image-list-before').css('width','491');
+      $('#image-list-before').removeClass("hide");
+    } else if (preview_num === 2 || preview_num === 7){
+      $('#image-list-before').css('width','363');
+      $('#image-list-before').removeClass("hide");
+    } else if (preview_num === 3 || preview_num === 8){
+      $('#image-list-before').css('width','234');
+      $('#image-list-before').removeClass("hide");
+    } else if (preview_num === 4 || preview_num === 9){
+      $('#image-list-before').css('width','106');
+      $('#image-list-before').removeClass("hide");
+    } else if (preview_num === 10){
+      $('#image-list-before').addClass("hide");
+    } else {
+      $('#image-list-before').removeClass("hide");
+    }
+  };
 
   // プレビューの削除
   $(function(){
@@ -55,6 +69,7 @@ $(function(){
       var i = preview_box.attr('data-id');
       preview_box.remove();
       delete send_file_obj[i]
+      change_drop_box_size();
     });
   });
 // -------------------------------------------------------------------
@@ -110,8 +125,8 @@ $(function(){
     })
 
     .done(function(){
-
-      $("#item-sell-submit-btn").prop("disabled", false);
+      $(".modal-overlay").fadeIn(200);
+      $(".modal-screen").fadeIn(200);
     })
     .fail(function(){
       if ( !send_file_obj[0] ){

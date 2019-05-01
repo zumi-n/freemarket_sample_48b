@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :confirm, :purchase]
+  before_action :set_item, only: [:show, :edit, :update, :confirm, :purchase]
   before_action :set_card, only: [:confirm, :purchase]
 
   def index
     @items = Item.includes(:images).sample(4)
     @parents = Category.order("id ASC").limit(14)
+  end
+
+  def show
   end
 
   def new
@@ -16,22 +19,23 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      respond_to do |format|
+        format.json
+        format.html { redirect_to root_path }
+      end
     else
       render :new
     end
   end
 
-
-  before_action :set_item, only: [:edit, :update,:show, :confirm]
-
-  def index
-    @items = Item.includes(:images).sample(4)
+  def edit
+    @item.image = Image.new
+    @item.delivery = Delivery.new
   end
 
-
-  def show
-
+  def update
+    @item.update(item_params)
+    binding.pry
   end
 
   def confirm
@@ -72,16 +76,6 @@ class ItemsController < ApplicationController
     )
   end
 
-  def edit
-    @item.image = Image.new
-    @item.delivery = Delivery.new
-  end
-
-  def update
-    @item.update(item_params)
-    binding.pry
-
-  end
 
   private
 

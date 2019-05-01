@@ -1,7 +1,7 @@
 .single-container
   %header.single-header
     %h1
-      = link_to('https://www.mercari.com/jp/') do
+      = link_to root_path do
         = image_tag 'mercari_logo_color.svg', alt: 'mercari', height: '49px', width: '185px'
   %main.single-main
     %section.buy-item-container
@@ -23,8 +23,7 @@
                     %ul#image-list
                       = item.fields_for :image do |image|
                         = image.label :file, id: 'image-list-before' do
-                          = image.file_field :file, multiple: true
-                          / , style: 'display: none;'
+                          = image.file_field :file, multiple: true, style: 'display: none;'
                           .items-container__drop-box#image-drop-box
                             %pre.visible-pc
                               ドラッグ & ドロップ
@@ -158,3 +157,8 @@
           .overlay
   = render 'form-footer'
 
+.buy-item
+  .modal-overlay
+  .modal-screen
+    %p 出品が完了しました。
+    %a.close-btn TOPへ戻る

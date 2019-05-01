@@ -16,7 +16,13 @@
       .swiper-pagination
     .main-box
       %h2 ピックアップカテゴリー
-      = render 'shared/item', items: @items
+      %section.main-box__items
+        %h3
+          =link_to "レディース 新着アイテム", "#"
+ 
+        .main-box__items__row
+          = render partial: 'shared/item-content', collection: @items, as: 'item'
+  
 
     =render "shared/sell-btn"
 

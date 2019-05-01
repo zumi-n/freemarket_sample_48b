@@ -175,7 +175,7 @@
 
 .items-detail-message__container{
   width: 700px;
-  margin: 10px 351px;
+  margin: 10px auto;
   background-color: white;
 }
 .items-detail-message__body{
@@ -272,7 +272,7 @@
 .nav-item-link{
   width: 700px;
   height: 28px;
-  margin: 24px 351px 0;
+  margin: 24px auto;
   font-size: 14px;
   display: flex;
   justify-content: space-between;
@@ -290,7 +290,7 @@
   width: 700px;
   height: 138px;
   padding: 32px 0 24px;
-  margin: 24px 351px;
+  margin: 24px auto;
   background-color: white;
   .social-mediabox{
     display: flex;
@@ -339,7 +339,7 @@
 
 .items-user-box{
   width: 720px;
-  margin: 24px 351px;
+  margin: 24px auto;
   &__items{
     h4{
       font-size: 22px;

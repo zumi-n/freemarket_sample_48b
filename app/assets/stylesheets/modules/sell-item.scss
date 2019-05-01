@@ -10,3 +10,42 @@
     margin-top: 8px;
   }
 }
+
+
+
+#image-list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 630px;
+  li{
+    margin-bottom: 10px;
+  }
+}
+
+#image-list-before{
+  width: 100%;
+}
+
+.drop-box-size-zero-or-five{
+  width: 620px;
+}
+
+.drop-box-size-one-or-six{
+  width: 491px;
+}
+
+.drop-box-size-two-or-seven{
+  width: 363px;
+}
+
+.drop-box-size-three-or-eight{
+  width: 234px;
+}
+
+.drop-box-size-four-or-nine{
+  width: 106px;
+}
+
+.drop-box-size-ten{
+  display: none;
+}

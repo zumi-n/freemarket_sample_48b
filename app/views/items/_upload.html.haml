@@ -13,3 +13,11 @@
     ドラッグ & ドロップ
     またはクリックしてアップロード
   %i.icon-camera
+
+%ul
+  %li.upload-item
+    %figure.upload-figure.square
+      = image_tag 'list_item_example1.jpg'
+    .upload-btn
+      = link_to('編集', '#', {class: 'upload-btn__edit'})
+      = link_to('削除', '#', {class: 'upload-btn__delete'})

@@ -1,6 +1,6 @@
 - parents.each do |parent|
   %li.pc-header-nav-parent
-    %h6 #{parent.name}
+    %h5 #{parent.name}
 
     %ul.pc-header-nav-children-wrap
       - if parent.children.present?
@@ -13,6 +13,4 @@
                 - child.children.each do |grandchild|
                   %li.category-children
                     %h6 #{grandchild.name}
-
-
-
+                    

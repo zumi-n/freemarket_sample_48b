@@ -1,7 +1,4 @@
 Faker::Config.locale = :ja
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 
 lady = Category.create( name: "レディース" )
 men = Category.create( name: "メンズ" )
@@ -20,14 +17,34 @@ list = Category.create( name: "カテゴリー一覧" )
 
 lady_tops = lady.children.create( name: "トップス")
 lady_jacket = lady.children.create( name: "ジャケット/アウター")
-
-lady_tops.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"}, {name: "Tシャツ/カットソー(七分/長袖)"},{name: "その他"}])
-lady_jacket.children.create([{name: "テーラードジャケット"}, {name: "ノーカラージャケット"}, {name: "Gジャン/デニムジャケット"},{name: "その他"}])
-
+lady_pants = lady.children.create( name: "パンツ")
+lady_skirt = lady.children.create( name: "スカート")
+lady_onepiece = lady.children.create( name: "ワンピース")
+lady_shoes = lady.children.create( name: "靴")
+lady_roomwear = lady.children.create( name: "ルームウェア/パジャマ")
+lady_legwear = lady.children.create( name: "レッグウェア")
+lady_cap = lady.children.create( name: "帽子")
+lady_bag = lady.children.create( name: "バッグ")
+lady_accessories = lady.children.create( name: "アクセサリー")
+lady_hairaccessories = lady.children.create( name: "ヘアアクセサリー")
+lady_accessory = lady.children.create( name: "小物")
+lady_watch = lady.children.create( name: "時計")
+lady_tops.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"}, {name: "Tシャツ/カットソー(七分/長袖)"},{name: "シャツ/ブラウス(半袖/袖なし)"},{name: "シャツ/ブラウス(七分/長袖)"}, {name: "ポロシャツ"},{name: "キャミソール"},{name: "タンクトップ"}, {name: "ホルターネック"},{name: "ニット/セーター"},{name: "チュニック"}, {name: "カーディガン/ボレロ"},{name: "アンサンブル"}, {name: "ベスト/ジレ"},{name: "パーカー"}])
+lady_jacket.children.create([{name: "テーラードジャケット"}, {name: "ノーカラージャケット"}, {name: "Gジャン/デニムジャケット"},{name: "レザージャケット"}, {name: "ダウンジャケット"}, {name: "ライダースジャケット"}, {name: "ミリタリージャケット"},{name: "ダウンベスト"},{name: "ジャンパー/ブルゾン"}, {name: "ポンチョ"}, {name: "ロングコート"}, {name: "トレンチコート"},{name: "ダッフルコート"},{name: "ピーコート"}])
 
 men_tops = men.children.create( name: "トップス")
 men_jacket = men.children.create( name: "ジャケット/アウター")
 men_pants = men.children.create( name: "パンツ")
-
-men_tops.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"}, {name: "Tシャツ/カットソー(七分/長袖)"},{name: "その他"}])
+men_shoes = men.children.create( name: "靴")
+men_bag = men.children.create( name: "バッグ")
+men_suit = men.children.create( name: "スーツ")
+men_cap = men.children.create( name: "帽子")
+men_accessories = men.children.create( name: "アクセサリー")
+men_accessory = men.children.create( name: "小物")
+men_watch = men.children.create( name: "時計")
+men_waterwear = men.children.create( name: "水着")
+men_legwear = men.children.create( name: "レッグウェア")
+men_underwear = men.children.create( name: "アンダーウェア")
+men_etc = men.children.create( name: "その他")
+men_tops.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"}, {name: "Tシャツ/カットソー(七分/長袖)"},{name: "シャツ"}, {name: "ポロシャツ"}, {name: "タンクトップ"}, {name: "ニット/セーター"},{name: "パーカー"}, {name: "カーディガン"}, {name: "スウェット"}, {name: "ジャージ"},{name: "ベスト"},{name: "その他"}])
 men_jacket.children.create([{name: "テーラードジャケット"}, {name: "ノーカラージャケット"}, {name: "Gジャン/デニムジャケット"},{name: "その他"}])

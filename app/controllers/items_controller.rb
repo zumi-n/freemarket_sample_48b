@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:images).sample(4)
+    @parents = Category.order("id ASC").limit(14)
   end
 
   def new
@@ -20,7 +21,6 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-
 
   def show
     # @profile = Profile.find(params[:id])

@@ -1,0 +1,4 @@
+%li.category-children
+  - parents.each do |parent|
+    - parent.children.each do |child|
+      %h6 #{child.name}

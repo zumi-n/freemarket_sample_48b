@@ -1,5 +1,5 @@
 class AddressController < ApplicationController
-  skip_before_action :delete_user
+  # skip_before_action :delete_user
   # before_action :move_to_root,unless: :user_signed_in?
   def new
     @address=Address.new

@@ -1,0 +1,83 @@
+.sp-header {
+  position: relative;
+  z-index: 1000;
+  background-color: $white;
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px 0;
+    .logo {
+      width: 132px;
+    }
+    &__navi--user--link {
+      color: #ccc;
+      display: inline-block;
+      height: 32px;
+      width: 32px;
+      margin-inline-start: 13px;
+      vertical-align: middle;
+      figure {
+        display: inline-block;
+        text-align: center;
+        height: 32px;
+        width: 32px;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__search-bar {
+    margin: 13px 10px 0;
+    padding-bottom: 6px;
+    position: relative;
+    .sp-search-box {
+      margin: 0;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      width: 100%;
+      height: 40px;
+      padding: 0 50px 0 10px;
+      transition: all ease-out .3s;
+    }
+    .search-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      z-index: 1;
+      font-size: 14px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+  &__navi {
+    display: flex;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      height: 42px;
+      font-weight: bold;
+      color: $main-font;
+      .fa {
+        color: $red;
+        font-size: 12px;
+        margin-inline-end: 4px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .visible-sp {
+    display: none;
+  }
+}
+@media screen and (min-width: 375px) {
+  
+}

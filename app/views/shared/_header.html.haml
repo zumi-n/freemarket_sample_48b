@@ -5,7 +5,7 @@
         = link_to root_path do
           = image_tag "mercari_logo_color.svg", alt: 'mercari'
       = form_with url: '#', class: "pc-header__box__top--search-box" do |form|
-        = form.text_field :search, placeholder: "何かお探しですか？", class: 'sp-search-box input-default'
+        = form.text_field :search, placeholder: "何かお探しですか？", class: 'search-box input-default'
         = form.button type: 'submit', class: 'search-btn' do
           %i.fa.fa-search
     .pc-header__box__navi
@@ -56,7 +56,7 @@
         %figure
           %i.fa.fa-circle.fa-lg
   .sp-header__search-bar
-    = form_with url: '#', class: "pc-header__search-bar__form" do |form|
+    = form_with url: '#', class: "sp-header__search-bar__form" do |form|
       = form.text_field :search, placeholder: "何をお探しですか？", class: 'sp-search-box input-default'
       = form.button type: 'submit', class: 'search-btn' do
         %i.fa.fa-search
@@ -64,6 +64,6 @@
     = link_to '#', class: "sp-header__navi--category" do
       %i.fa.fa-list-ul
       %span カテゴリーから探す
-    = link_to '#', class: "pc-header__navi--brand" do
+    = link_to '#', class: "sp-header__navi--brand" do
       %i.fa.fa-tag
       %span ブランドから探す

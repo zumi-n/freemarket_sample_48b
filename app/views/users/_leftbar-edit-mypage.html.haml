@@ -88,7 +88,7 @@
 
     .setting-nav-head
       %h3 設定
-      = link_to '#', class: 'mypage-nav__list--item__profile' do
+      = link_to edit_profile_path(@profile.id), class: 'mypage-nav__list--item__profile' do
         プロフィール
 
         %i.fas.fa-chevron-right

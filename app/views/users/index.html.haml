@@ -16,7 +16,7 @@
             = link_to '#', class: "" do
               = image_tag('member_photo_noimage_thumb.png', class: "face", width: "60", height: "60")
               .mypage-user-icon__face__name
-                %h2 あざお
+                %h2=@user.nickname
               .mypage-user-icon__face__info
                 .mypage-user-icon__face__info--value
                   評価

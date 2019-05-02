@@ -12,10 +12,12 @@
 |first_name_kana|string|null: false|
 |birthday_data|DATE|null: false|
 |evaluation|integer||
+|introduction|text||
+|image|string||
+|nickname|string|null: false|
 
 ### Association
 - has_one  :address
-- has_one  :profile
 - has_one  :phonenumber
 - has_many :cards
 - has_many :items
@@ -27,18 +29,6 @@
 |------|----|-------|
 |user_id|references|null: false , foreign_key: true|
 |phonenumber|integer|null: false , unique: true||
-
-### Association
-- belongs_to :user
-
-## profiles table
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false , foreign_key: true|
-|introduction|text||
-|image|string||
-|nickname|string|null: false|
 
 ### Association
 - belongs_to :user
@@ -128,9 +118,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false , foreign_key: true|
-|ancestry|string|null: false, index: true|
+|name|string||
+|ancestry|string|index: true|
 
 ### Association
-- belongs_to :item
+- has_many :items
 - has_ancestry

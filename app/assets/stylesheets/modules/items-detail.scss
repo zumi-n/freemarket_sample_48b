@@ -119,6 +119,42 @@
   }
 }
 
+.item-edit__btn{
+  background-color: #ea352d;
+  height: 60px;
+  margin-top: 16px;
+  border: none;
+  text-decoration: none;
+  a{
+    text-align: center;
+    line-height: 60px;
+  }
+  p{
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.item-delete__btn{
+  background-color: #aaa;
+  height: 60px;
+  margin-top: 16px;
+  border: none;
+  text-decoration: none;
+  a{
+    text-align: center;
+    line-height: 60px;
+  }
+  p{
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
 .item-detail-description{
   width: 620px;
   margin-top: 40px;
@@ -209,7 +245,7 @@
 
 .says {
   display: inline-block;
-  position: relative; 
+  position: relative;
   margin-top: 20px;
   padding: 10px;
   width: 580px;
@@ -224,7 +260,7 @@
   content: "";
   display: inline-block;
   position: absolute;
-  top: 3px; 
+  top: 3px;
   left: -19px;
   border: 8px solid transparent;
   border-right: 18px solid #edf1ee;

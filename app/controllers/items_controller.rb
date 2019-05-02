@@ -36,6 +36,14 @@ class ItemsController < ApplicationController
     @item.update(item_params)
   end
 
+  def destroy
+    item = Item.find((params[:id]))
+    if item.user_id == current_user.id
+      item.destroy
+    end
+    redirect_to root_path
+  end
+
   def confirm
     @card = Card.where(user_id: current_user.id).first
     if @card.blank?

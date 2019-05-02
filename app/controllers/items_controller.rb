@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @delivery = @item.delivery
   end
 
   def new

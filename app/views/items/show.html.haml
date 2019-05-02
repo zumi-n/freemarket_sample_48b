@@ -42,16 +42,16 @@
               %br
               %i.fas.fa-chevron-right
               %span トップス（その他）
-        - if @item.brand.present?
-          %tr
-            %th ブランド
-            %td
-              =link_to '#' do
-                %p=@item.brand
-        - if @item.size.present?
-          %tr
-            %th サイズ
-            %td=@item.size
+        / - if @item.brand.present?
+        /   %tr
+        /     %th ブランド
+        /     %td
+        /       =link_to '#' do
+        /         %p=@item.brand
+        / - if @item.size.present?
+        /   %tr
+        /     %th サイズ
+        /     %td=@item.size
         %tr
           %th 商品の状態
           %td=@item.condition
@@ -196,7 +196,7 @@
   .items-user-box
     %section.items-user-box__items
       %h4
-        =link_to "#{@item.brand}"+"のTシャツのその他の出品", "#"
+        =link_to "シャネル"+"のTシャツのその他の出品", "#"
 
       .items-user-box__items__row
         .items-user-box__items__row__userselling-item-box

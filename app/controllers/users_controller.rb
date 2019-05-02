@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_parents
+  before_action :set_user
+
+  def index
+  end
+
+  def edit
+  end
 
   def register
   end
@@ -6,14 +15,18 @@ class UsersController < ApplicationController
   def logout
   end
 
-    private
+  private
 
   def user_params
     params.require(:user).permit(:name, :email)
   end
 
+  def set_parents
+    @parents = Category.limit(14)
+  end
+
+  def set_user
+    @user = User.find(current_user.id)
+  end
 
 end
-
-
-

@@ -1,10 +1,14 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :confirm, :purchase]
+  before_action :set_item, only: [:show, :edit, :update, :confirm, :purchase]
   before_action :set_card, only: [:confirm, :purchase]
   before_action :set_parents, only: [:index, :show]
 
   def index
     @items = Item.includes(:images).sample(4)
+  end
+
+  def show
+    @delivery = @item.delivery
   end
 
   def new
@@ -16,15 +20,20 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to :root
+      respond_to do |format|
+        format.json
+        format.html { redirect_to root_path }
+      end
     else
       render :new
     end
   end
 
-  def show
-    # @profile = Profile.find(params[:id])
-    @delivery = @item.delivery
+  def edit
+  end
+
+  def update
+    @item.update(item_params)
   end
 
   def confirm
@@ -69,7 +78,11 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :size, :condition, :price, :category_id, images_attributes:[:item_id, {file: []}], delivery_attributes:[:payer, :method, :area, :date]).merge(user_id: current_user.id)
+    params.require(:item).permit(:id, :name, :description, :brand, :size, :condition, :price, :category_id, images_attributes:[:id, :item_id, {file: []}], delivery_attributes:[:id, :payer, :method, :area, :date]).merge(user_id: current_user.id)
+  end
+
+  def image_params
+    params.require(:image).permit(:id, :item_id, {file: []})
   end
 
   def set_item

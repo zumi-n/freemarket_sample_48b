@@ -10,3 +10,18 @@
     margin-top: 8px;
   }
 }
+
+
+#image-list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 630px;
+  li{
+    margin-bottom: 10px;
+  }
+}
+
+#image-list-before{
+  width: 100%;
+}
+

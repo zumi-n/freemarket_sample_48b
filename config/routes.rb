@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         #sessions: 'users/sessions'
       }
   root 'items#index'
-  resources :items, only: [:index, :show, :new, :create] do
+  resources :items do
     member do
       get :confirm
       post :purchase

@@ -63,8 +63,8 @@ body {
               line-height: 1.5;
             }
             .items-container {
-              display: inline;
-              display: flex;
+              display: inline-flex;
+              flex-wrap: wrap;
               margin: 16px auto 0;
             @media screen and (min-width: 768px) {
               .items-container {
@@ -88,6 +88,7 @@ body {
                       width: 116px;
                       border: 1px solid $border;
                       vertical-align: top;
+                      margin-right: 10px;
                       .upload-figure {
                         position: relative;
                         overflow: hidden;
@@ -123,10 +124,9 @@ body {
               }
               &__drop-box {
                 position: relative;
-                width: 80%;
+                width: 100%;
                 min-height: 162px;
                 padding: 40px;
-                margin-left: 2%;
                 background: $upload-btn-area;
                 border: 1px dashed $border;
                 text-align: center;
@@ -135,6 +135,9 @@ body {
                   display: none;
                   border: 0;
                   outline: 0;
+                }
+                pre{
+                  white-space: pre-wrap;
                 }
                 .visible-pc {
                   display: none;
@@ -148,9 +151,8 @@ body {
               @media screen and (min-width: 768px) {
                 .items-container__drop-box {
                   position: relative;
-                  margin-left: 2%;
                   padding: 40px;
-                  width: 490px;
+                  width: 100%;
                   .visible-pc {
                     display: block;
                     position: absolute;

@@ -42,14 +42,16 @@
               %br
               %i.fas.fa-chevron-right
               %span トップス（その他）
-        %tr
-          %th ブランド
-          %td
-            =link_to '#' do
-              %p=@item.brand
-        %tr
-          %th サイズ
-          %td=@item.size
+        - if @item.brand.present?
+          %tr
+            %th ブランド
+            %td
+              =link_to '#' do
+                %p=@item.brand
+        - if @item.size.present?
+          %tr
+            %th サイズ
+            %td=@item.size
         %tr
           %th 商品の状態
           %td=@item.condition

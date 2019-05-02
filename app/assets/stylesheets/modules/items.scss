@@ -514,18 +514,19 @@
   .pc-header__box {
     width: 1020px;
   }
-  h2 {
-    font-size: 28px;
-    text-align: center;
-  }
   p {
     font-size: 35px;
   }
-  li:first-child {
-    padding: 0 14px;
-  }
   .main-box__items {
     width: 940px;
+  }
+  .app-banner__content__inner {
+    h2 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 35px;
+    }
   }
 }
 

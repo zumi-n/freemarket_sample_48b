@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.build_image
+    @item.images.build
     @item.build_delivery
   end
 
@@ -29,13 +29,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item.image = Image.new
-    @item.delivery = Delivery.new
   end
 
   def update
     @item.update(item_params)
-    binding.pry
   end
 
   def confirm
@@ -80,7 +77,11 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:id, :name, :description, :brand, :size, :condition, :price, :category_id, image_attributes:[:id, :item_id, {file: []}], delivery_attributes:[:id, :payer, :method, :area, :date]).merge(user_id: current_user.id)
+    params.require(:item).permit(:id, :name, :description, :brand, :size, :condition, :price, :category_id, images_attributes:[:id, :item_id, {file: []}], delivery_attributes:[:id, :payer, :method, :area, :date]).merge(user_id: current_user.id)
+  end
+
+  def image_params
+    params.require(:image).permit(:id, :item_id, {file: []})
   end
 
   def set_item

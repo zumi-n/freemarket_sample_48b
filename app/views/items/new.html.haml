@@ -9,7 +9,7 @@
         .container__inner
           %h2.single-head
             商品の情報を入力
-          = form_for @item, id: 'new-item' do |item|
+          = form_for @item do |item|
             .upload-box
               %h3.upload-box__head
                 出品画像
@@ -21,9 +21,9 @@
                 .items-container__upload
                   .items-container__upload__items.have-item-1
                     %ul#image-list
-                      = item.fields_for :image do |image|
+                      = item.fields_for :images do |image|
                         = image.label :file, id: 'image-list-before' do
-                          = image.file_field :file, multiple: true, style: 'display: none;'
+                          = image.file_field :file, multiple: true , style: 'display: none;'
                           .items-container__drop-box#image-drop-box
                             %pre.visible-pc
                               ドラッグ & ドロップ

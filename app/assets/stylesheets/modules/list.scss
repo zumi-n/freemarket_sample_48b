@@ -136,6 +136,9 @@ body {
                   border: 0;
                   outline: 0;
                 }
+                pre{
+                  white-space: pre-wrap;
+                }
                 .visible-pc {
                   display: none;
                 }

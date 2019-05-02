@@ -86,37 +86,38 @@ $(function(){
 
     if ( file_count != 0 && file_count + send_img_cnt <= 10){
       make_preview(send_img_cnt,image_filelist);
-      $('#item_image_attributes_file').val('');
     }
   })
 
 // --------------------------------------------------------
   // 発火（File_field）
-  $('#item_image_attributes_file').change(function(){
+  $('#item_images_attributes_0_file').change(function(){
     // 投稿された画像をfileオブジェクトで取得する
-    var image_filelist = $('#item_image_attributes_file').prop('files');
+    var image_filelist = $('#item_images_attributes_0_file').prop('files');
     var file_count = image_filelist.length;
     var send_img_cnt = Object.keys(send_file_obj).length;
 
     if ( file_count != 0 && file_count + send_img_cnt <= 10){
       make_preview(send_img_cnt,image_filelist);
-      $('#item_image_attributes_file').val('');
+      $('#item_images_attributes_0_file').val('');
     }
   })
 // -----------------------------------------------------------
 
 
 // submit-btn押下
-  $('#new_item').on('submit',function(event){
+  $("#new_item, .edit_item").on('submit',function(event){
     event.preventDefault();
     var formdata = new FormData(this);
-    console.log(send_file_obj);
-    console.log(formdata);
     $.each(send_file_obj,function(index,file){
-      formdata.append('item[image_attributes][file][]',file)
+      formdata.append('item[images_attributes][0][file][]',file)
     })
+    var url = $(this).attr("action")
+    // if ( $(this).attr("class") === edit_item ){
+    //   url
+    // }
     $.ajax({
-      url: '/items',
+      url: url,
       type: 'POST',
       data: formdata,
       dataType: 'json',
@@ -127,6 +128,7 @@ $(function(){
     .done(function(){
       $(".modal-overlay").fadeIn(200);
       $(".modal-screen").fadeIn(200);
+      console.log("OK")
     })
     .fail(function(){
       if ( !send_file_obj[0] ){

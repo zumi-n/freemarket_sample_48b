@@ -3,7 +3,7 @@
     %ul.mypage-nav__list
 
       %li
-        = link_to '#', class: 'mypage-nav__list--item' do
+        = link_to users_path, class: 'mypage-nav__list--item' do
           マイページ
 
 
@@ -88,7 +88,7 @@
 
     .setting-nav-head
       %h3 設定
-      = link_to edit_profile_path(@profile.id), class: 'mypage-nav__list--item__profile' do
+      = link_to edit_user_path(current_user.id), class: 'mypage-nav__list--item__profile' do
         プロフィール
 
         %i.fas.fa-chevron-right
@@ -99,7 +99,7 @@
             %i.fas.fa-chevron-right
 
         %li
-          = link_to '#', class: 'mypage-nav__list--item' do
+          = link_to cards_path, class: 'mypage-nav__list--item' do
             支払い方法
             %i.fas.fa-chevron-right
 
@@ -109,7 +109,7 @@
             %i.fas.fa-chevron-right
 
         %li
-          = link_to '#', class: 'mypage-nav__list--item' do
+          = link_to register_user_path(current_user.id), class: 'mypage-nav__list--item' do
             本人情報
             %i.fas.fa-chevron-right
 
@@ -119,6 +119,6 @@
             %i.fas.fa-chevron-right
 
         %li
-          = link_to '#', class: 'mypage-nav__list--item' do
+          = link_to logout_user_path(current_user.id), class: 'mypage-nav__list--item' do
             ログアウト
             %i.fas.fa-chevron-right

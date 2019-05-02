@@ -19,8 +19,7 @@ Rails.application.routes.draw do
   resources :phonenumber
   resources :address
   resources :creditcards
-  resources :profiles, only: [:index, :edit]
-  resources :users, only: [:show, :new] do
+  resources :users, only: [:index, :edit, :new] do
     member do
       get :logout
       get :register

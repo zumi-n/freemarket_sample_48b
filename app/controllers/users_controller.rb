@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:new]
   before_action :set_parents
-  before_action :set_user
+  before_action :set_user, except: [:new]
 
   def index
   end

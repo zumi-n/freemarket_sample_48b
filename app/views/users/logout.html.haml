@@ -10,8 +10,8 @@
     .main
       .content
       .logout
-        .logout__btn
-          = link_to destroy_user_session_path, method: :delete, class: 'btn' do
+        = link_to destroy_user_session_path, method: :delete, class: 'btn' do
+          .logout__btn
             %span ログアウト
 
   = render 'shared/sell-btn'

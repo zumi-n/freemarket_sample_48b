@@ -1,0 +1,32 @@
+.wrapper
+  .signup-bar
+    .signup-header
+      =link_to image_tag("mercari_logo_color.svg"), "root_path", class: "sign-up-logo"
+      %ul
+        %li.first-list
+          会員情報
+          .radius
+        %li#active-text
+          電話番号認証
+          .radius#active
+        %li
+          お届け先住所入力
+          .radius
+        %li
+          完了
+          .radius-last
+  .single-main
+    .single-main-container
+      %h2.single-main-container__head 電話番号の確認
+      .single-main-container__inner
+        .single-main-container__inner--content
+        = form_for :session, url: sign_up_address_path do |f|
+          .ur-form-group
+            = f.label :携帯電話の番号 , class: "ur-form-group__label"
+            %span.ur-form-group__span 必須
+            = f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder:"例) 000-0000-0000", class: "ur-form-group__field"
+            %p.ur-form-group__text 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+            .ur-form__btn
+              = f.submit "次へ進む",class: "ur-form__btn--submit ur-form__btn--default ur-form__btn--red"
+            %p.ur-form-group__text ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+    =render 'shared/sign-up-footer'

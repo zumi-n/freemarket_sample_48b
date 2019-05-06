@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_one :profile
   has_many :cards
   has_many :items
-  has_many :comments
+  # has_many :comments
+
+  accepts_nested_attributes_for :address
 
 end

@@ -25,6 +25,7 @@ crumb :register_user do |user|
   parent :users
 end
 
+
 crumb :cards do
   link "支払い方法", cards_path
   parent :users

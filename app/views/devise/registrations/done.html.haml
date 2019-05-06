@@ -1,0 +1,30 @@
+.wrapper
+  .signup-bar
+    .signup-header
+      =link_to image_tag("mercari_logo_color.svg"), "root_path", class: "sign-up-logo"
+      %ul
+        %li.first-list
+          会員情報
+          .radius
+        %li
+          電話番号認証
+          .radius
+        %li
+          お届け先住所入力
+          .radius
+        %li#active-text
+          完了
+          .radius-last#active
+  .single-main
+    .single-comp-container
+      %h2.single-comp-container__head 会員登録完了
+      .single-comp-container__inner
+        .single-comp-container__inner--content
+        ありがとうございます。
+        .signin__user-infomation__complete
+        会員登録が完了しました。
+        .signin__user-infomation__btn
+          = link_to "メルカリを始める。", root_path, class: "signin__user-infomation__btn__start"
+  =render 'shared/sign-up-footer'
+
+

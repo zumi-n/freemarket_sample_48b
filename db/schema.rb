@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_043458) do
+ActiveRecord::Schema.define(version: 2019_05_06_043404) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "family_name_kanji", null: false
-    t.string "first_name_kanji", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.date "birthday", null: false
     t.string "postal_code", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
@@ -27,6 +22,13 @@ ActiveRecord::Schema.define(version: 2019_05_02_043458) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,16 +91,6 @@ ActiveRecord::Schema.define(version: 2019_05_02_043458) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
-  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.text "introduction"
-    t.string "image"
-    t.string "nickname", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -116,6 +108,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_043458) do
     t.integer "evaluation"
     t.text "introduction"
     t.string "image"
+    t.string "phone_number", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -127,5 +120,4 @@ ActiveRecord::Schema.define(version: 2019_05_02_043458) do
   add_foreign_key "deliveries", "items"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
-  add_foreign_key "profiles", "users"
 end

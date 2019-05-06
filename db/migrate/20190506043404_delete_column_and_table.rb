@@ -8,6 +8,5 @@ class DeleteColumnAndTable < ActiveRecord::Migration[5.2]
 
     add_column :users, :phone_number, :string, null: false, unique: true
 
-    drop_table :profiles
   end
 end

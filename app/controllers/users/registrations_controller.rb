@@ -158,7 +158,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
 
- def check_captcha
+  def check_captcha
     self.resource = resource_class.new sign_up_params
     resource.validate
     respond_with_navigational(resource) { render :new } unless verify_recaptcha(model: resource)
